@@ -1,0 +1,47 @@
+<import src="../tpl/popup_tpl.wxml" />
+
+<!--pages/checkwork/index.wxml-->
+<view class='main'>
+	<!--操作区-->
+	<view class='clearfix margin-top'>
+		<view class='work-footer clearfix'>
+			<view class='x4 padding-top-bottom' bindtap='goToWork'>
+				<view class='work-cz cz1'>
+					<text class='icon iconfont icon-qiandao'></text>
+				</view>
+				<view class='txt'>上班签到</view>
+			</view>
+			<view class='x4 padding-top-bottom' bindtap='goOffWork'>
+				<view class='work-cz cz5'>
+					<text class='icon iconfont icon-character-cancel'></text>
+				</view>
+				<view class='txt'>下班签退</view>
+			</view>
+		</view>
+	</view>
+    <!--底部-->
+    <view class='footer clearfix'>
+        <view class='wBox text-center'>
+            <view bindtap='viewIndex' class='wBox-1'>
+                <view class='icon iconfont icon-ziyuan'></view>
+                <view class='txt'>我的促销点</view>
+            </view>
+            <view class='wBox-1 text-main' wx:if="{{roleData[0] == 2}}">
+                <view bindtap='viewIndex' class='icon iconfont icon-kaoqin1'></view>
+                <view bindtap='viewIndex' class='txt'>考勤</view>
+            </view>
+            <view bindtap='materielManage' class='wBox-1' wx:if="{{roleData[0] == 2}}">
+                <view bindtap='viewIndex' class='icon iconfont icon-wuliaoxianxing'></view>
+                <view bindtap='viewIndex' class='txt'>物料管理</view>
+            </view>
+            <view bindtap='customerManage' class='wBox-1' wx:if="{{roleData[0] == 2}}">
+                <view bindtap='viewIndex' class='icon iconfont icon-web-icon-'></view>
+                <view bindtap='viewIndex' class='txt'>客户管理</view>
+            </view>
+            <view class='wBox-1'>
+                <view bindtap='viewHome' class='icon iconfont icon-yonghu'></view>
+                <view bindtap='viewHome' class='txt'>个人中心</view>
+            </view>
+        </view>
+    </view>
+</view>

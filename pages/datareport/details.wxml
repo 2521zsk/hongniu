@@ -1,0 +1,704 @@
+<import src="../tpl/popup_tpl.wxml" />
+
+<!--pages/datareport/details.wxml-->
+<view class='main'>
+	<!--切换栏-->
+	<view class='clearfix'>
+		<view class='report-switch border-bottom'>
+			<view class='wBox'>
+				<block wx:if='{{Type == 1}}'>
+					<!--门店-->
+					<view class='wBox-1'>
+						<text bindtap='detailsSwitch' data-cur='0' wx:if='{{Cur == 0}}' class='cur'>基本信息</text>
+						<text bindtap='detailsSwitch' data-cur='0' wx:else>基本信息</text>
+					</view>
+					<view class='wBox-1'>
+						<text bindtap='detailsSwitch' data-cur='1' wx:if='{{Cur == 1}}' class='cur'>进货</text>
+						<text bindtap='detailsSwitch' data-cur='1' wx:else>进货</text>
+					</view>
+					<view class='wBox-1'>
+						<text bindtap='detailsSwitch' data-cur='2' wx:if='{{Cur == 2}}' class='cur'>销售</text>
+						<text bindtap='detailsSwitch' data-cur='2' wx:else>销售</text>
+					</view>
+					<view class='wBox-1'>
+						<text bindtap='detailsSwitch' data-cur='3' wx:if='{{Cur == 3}}' class='cur'>备注</text>
+						<text bindtap='detailsSwitch' data-cur='3' wx:else>备注</text>
+					</view>
+				</block>
+				<block wx:else>
+					<!--场所-->
+					<view class='wBox-1'>
+						<text bindtap='detailsSwitch' data-cur='0' wx:if='{{Cur == 0}}' class='cur'>基本信息</text>
+						<text bindtap='detailsSwitch' data-cur='0' wx:else>基本信息</text>
+					</view>
+					<view class='wBox-1'>
+						<text bindtap='detailsSwitch' data-cur='4' wx:if='{{Cur == 4}}' class='cur'>赠饮</text>
+						<text bindtap='detailsSwitch' data-cur='4' wx:else>赠饮</text>
+					</view>
+					<view class='wBox-1'>
+						<text bindtap='detailsSwitch' data-cur='5' wx:if='{{Cur == 5}}' class='cur'>销售</text>
+						<text bindtap='detailsSwitch' data-cur='5' wx:else>销售</text>
+					</view>
+					<view class='wBox-1'>
+						<text bindtap='detailsSwitch' data-cur='6' wx:if='{{Cur == 6}}' class='cur'>团购</text>
+						<text bindtap='detailsSwitch' data-cur='6' wx:else>团购</text>
+					</view>
+					<view class='wBox-1'>
+						<text bindtap='detailsSwitch' data-cur='3' wx:if='{{Cur == 3}}' class='cur'>备注</text>
+						<text bindtap='detailsSwitch' data-cur='3' wx:else>备注</text>
+					</view>
+				</block>
+			</view>
+		</view>
+	</view>
+    <!--内容-->
+    <view class='clearfix index-k'>
+		<!--基本信息A/B-->
+		<view class='clearfix margin-large-bottom {{CurArr[0]}}'>
+			<view class='work-details'>
+				<view class='wBox'>
+					<view class='work-details-bt'>门店名称</view>
+					<view class='wBox-1 text-right'>
+						<text>{{aData.storename}}</text>
+					</view>
+				</view>
+				<view class='work-details-border'></view>
+			</view>
+			<view class='work-details'>
+				<view class='wBox'>
+					<view class='work-details-bt'>地址</view>
+					<view class='wBox-1 text-right'>
+						<text>{{aData.address}}</text>
+					</view>
+				</view>
+				<view class='work-details-border'></view>
+			</view>
+			<view class='work-details'>
+				<view class='wBox'>
+					<view class='work-details-bt'>执行日期</view>
+					<view class='wBox-1 text-right'>
+						<text>{{aData.executedate}}</text>
+					</view>
+				</view>
+				<view class='work-details-border'></view>
+			</view>
+			<view class='padding-left-right margin-top'>
+				<view class='work-tab'>
+					<view class='clearfix work-th'>
+						<view class='x6'><text>名称</text></view>
+						<view class='x6 text-center'><text>数量</text></view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>终端覆盖网点数（个）</text></view>
+						<view class='x6 text-center'><text>{{aData.coverstorenumber}}</text></view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>现场覆盖人数（人）</text></view>
+						<view class='x6 text-center'><text>{{aData.scenepeoplenumber}}</text></view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>影响人数（人）</text></view>
+						<view class='x6 text-center'><text>{{aData.marketingnumber}}</text></view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>壹元乐享（个）</text></view>
+						<view class='x6 text-center'><text>{{aData.happynumber}}</text></view>
+					</view>
+				</view>
+			</view>
+			<view class='padding-left-right margin-top'>
+				<view class='height-big margin-bottom'>礼品使用登记</view>
+				<view class='work-tab'>
+					<view class='clearfix work-th'>
+						<view class='x6'><text>礼品名称</text></view>
+						<view class='x6 text-center'><text>礼品数量</text></view>
+					</view>
+					<view wx:if="{{bData.length > 0}}">
+						<block wx:for="{{bData}}">
+							<view class='clearfix work-td'>
+								<view class='x6'><text>{{item.productname}}</text></view>
+								<view class='x6 text-center'><text>{{item.productnumber}}</text></view>
+							</view>
+						</block>
+					</view>
+					<view wx:else class='clearfix work-td'>
+						<view class='x12 text-gray text-center'>暂无数据</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<!--进货A-->
+		<view class='clearfix margin-large-bottom {{CurArr[1]}}'>
+			<view wx:if='{{cData != ""}}' class='padding-left-right margin-top'>
+				<view class='work-tab'>
+					<view class='clearfix work-th'>
+						<view class='x6'><text>名称</text></view>
+						<view class='x6 text-center'><text>数量</text></view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>红牛-箱</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{cData.A1 != ""}}'>{{cData.A1}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>战马（罐）-箱</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{cData.A2 != ""}}'>{{cData.A2}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>战马（瓶）-箱</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{cData.A3 != ""}}'>{{cData.A3}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>果倍爽200ML-组</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{cData.A4 != ""}}'>{{cData.A4}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>果倍爽330ML-箱</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{cData.A5 != ""}}'>{{cData.A5}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>唯他可可330ML-箱</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{cData.A6 != ""}}'>{{cData.A6}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>唯他可可1L-箱</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{cData.A7 != ""}}'>{{cData.A7}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>芙丝330ML-箱</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{cData.A8 != ""}}'>{{cData.A8}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>芙丝500ML-箱</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{cData.A9 != ""}}'>{{cData.A9}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>芙丝SP375ML-箱</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{cData.A10 != ""}}'>{{cData.A10}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>芙丝ST375ML-箱</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{cData.A11 != ""}}'>{{cData.A11}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>芙丝SP800ML-箱</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{cData.A12 != ""}}'>{{cData.A12}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>芙丝ST800ML-箱</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{cData.A13 != ""}}'>{{cData.A13}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view wx:else class='padding-left-right margin-top text-center'>
+				<text class='text-gray'>暂无进货信息</text>
+			</view>
+		</view>
+		<!--销售A-->
+		<view class='clearfix margin-large-bottom {{CurArr[2]}}'>
+			<view wx:if='{{gData != ""}}' class='padding-left-right margin-top'>
+				<view class='work-tab'>
+					<view class='clearfix work-th'>
+						<view class='x6'><text>名称</text></view>
+						<view class='x6 text-center'><text>数量</text></view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>红牛单罐-罐</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{gData.a1 != ""}}'>{{gData.a1}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>红牛-箱</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{gData.a2 != ""}}'>{{gData.a2}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>战马（罐）-罐</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{gData.a3 != ""}}'>{{gData.a3}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>战马（罐）-箱</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{gData.a4 != ""}}'>{{gData.a4}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>战马（瓶）-瓶</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{gData.a5 != ""}}'>{{gData.a5}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>战马（瓶）-箱</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{gData.a6 != ""}}'>{{gData.a6}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>果倍爽200ML-袋</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{gData.a7 != ""}}'>{{gData.a7}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>果倍爽330ML-袋</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{gData.a8 != ""}}'>{{gData.a8}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>唯他可可330ML-瓶</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{gData.a9 != ""}}'>{{gData.a9}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>唯他可可1L-瓶</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{gData.a10 != ""}}'>{{gData.a10}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>芙丝330ML-瓶</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{gData.a11 != ""}}'>{{gData.a11}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>芙丝500ML-瓶</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{gData.a12 != ""}}'>{{gData.a12}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>芙丝SP375ML-瓶</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{gData.a13 != ""}}'>{{gData.a13}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>芙丝ST375ML-瓶</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{gData.a14 != ""}}'>{{gData.a14}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>芙丝SP800ML-瓶</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{gData.a15 != ""}}'>{{gData.a15}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>芙丝ST800ML-瓶</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{gData.a16 != ""}}'>{{gData.a16}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>其他1</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{gData.a17 != ""}}'>{{gData.a17}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>其他2</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{gData.a18 != ""}}'>{{gData.a18}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view wx:else class='padding-left-right margin-top text-center'>
+				<text class='text-gray'>暂无渠道销售信息</text>
+			</view>
+		</view>
+		<!--备注A/B-->
+		<view class='clearfix margin-large-bottom {{CurArr[3]}}'>
+			<view class='work-details'>
+				<view class='wBox'>
+					<view class='work-details-bt'>备注</view>
+					<view class='wBox-1'>
+						<text wx:if='{{aData.remark != ""}}'>{{aData.remark}}</text>
+						<text wx:else>-</text>
+					</view>
+				</view>
+				<view class='work-details-border'></view>
+			</view>
+		</view>
+		<!--赠饮B-->
+		<view class='clearfix margin-large-bottom {{CurArr[4]}}'>
+			<view wx:if='{{eData != ""}}' class='padding-left-right margin-top'>
+				<view class='work-tab'>
+					<view class='clearfix work-th'>
+						<view class='x6'><text>名称</text></view>
+						<view class='x6 text-center'><text>数量</text></view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>红牛单罐-罐</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{eData.a1 != ""}}'>{{eData.a1}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>战马（罐）-罐</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{eData.a2 != ""}}'>{{eData.a2}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>战马（瓶）-瓶</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{eData.a3 != ""}}'>{{eData.a3}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>果倍爽200ML-袋</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{eData.a4 != ""}}'>{{eData.a4}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>果倍爽330ML-袋</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{eData.a5 != ""}}'>{{eData.a5}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>唯他可可330ML-瓶</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{eData.a6 != ""}}'>{{eData.a6}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>唯他可可1L-瓶</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{eData.a7 != ""}}'>{{eData.a7}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>芙丝330ML-瓶</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{eData.a8 != ""}}'>{{eData.a8}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>芙丝500ML-瓶</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{eData.a9 != ""}}'>{{eData.a9}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>芙丝SP375ML-瓶</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{eData.a10 != ""}}'>{{eData.a10}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>芙丝ST375ML-瓶</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{eData.a11 != ""}}'>{{eData.a11}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>芙丝SP800ML-瓶</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{eData.a12 != ""}}'>{{eData.a12}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>芙丝ST800ML-瓶</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{eData.a13 != ""}}'>{{eData.a13}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view wx:else class='padding-left-right margin-top text-center'>
+				<text class='text-gray'>暂无赠饮信息</text>
+			</view>
+		</view>
+		<!--品牌销售B-->
+		<view class='clearfix margin-large-bottom {{CurArr[5]}}'>
+			<view wx:if='{{kData != ""}}' class='padding-left-right margin-top'>
+				<view class='work-tab'>
+					<view class='clearfix work-th'>
+						<view class='x6'><text>名称</text></view>
+						<view class='x6 text-center'><text>数量</text></view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>红牛单罐-罐</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{kData.a1 != ""}}'>{{kData.a1}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>战马（罐）-罐</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{kData.a2 != ""}}'>{{kData.a2}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>战马（瓶）-瓶</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{kData.a3 != ""}}'>{{kData.a3}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>果倍爽200ML-袋</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{kData.a4 != ""}}'>{{kData.a4}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>果倍爽330ML-袋</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{kData.a5 != ""}}'>{{kData.a5}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>唯他可可330ML-瓶</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{kData.a6 != ""}}'>{{kData.a6}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>唯他可可1L-瓶</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{kData.a7 != ""}}'>{{kData.a7}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>芙丝330ML-瓶</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{kData.a8 != ""}}'>{{kData.a8}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>芙丝500ML-瓶</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{kData.a9 != ""}}'>{{kData.a9}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>芙丝SP375ML-瓶</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{kData.a10 != ""}}'>{{kData.a10}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>芙丝ST375ML-瓶</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{kData.a11 != ""}}'>{{kData.a11}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>芙丝SP800ML-瓶</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{kData.a12 != ""}}'>{{kData.a12}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>芙丝ST800ML-瓶</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{kData.a13 != ""}}'>{{kData.a13}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view wx:else class='padding-left-right margin-top text-center'>
+				<text class='text-gray'>暂无品牌销售信息</text>
+			</view>
+		</view>
+		<!--团购B-->
+		<view class='clearfix margin-large-bottom {{CurArr[6]}}'>
+			<view wx:if='{{fData != ""}}' class='padding-left-right margin-top'>
+				<view class='work-tab'>
+					<view class='clearfix work-th'>
+						<view class='x6'><text>名称</text></view>
+						<view class='x6 text-center'><text>数量</text></view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>红牛-箱</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{fData.a1 != ""}}'>{{fData.a1}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>战马（罐）-箱</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{fData.a2 != ""}}'>{{fData.a2}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>战马（瓶）-箱</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{fData.a3 != ""}}'>{{fData.a3}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>果倍爽200ML-组</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{fData.a4 != ""}}'>{{fData.a4}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>果倍爽330ML-箱</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{fData.a5 != ""}}'>{{fData.a5}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>唯他可可330ML-箱</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{fData.a6 != ""}}'>{{fData.a6}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>唯他可可1L-箱</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{fData.a7 != ""}}'>{{fData.a7}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>芙丝330ML-箱</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{fData.a8 != ""}}'>{{fData.a8}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>芙丝500ML-箱</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{fData.a9 != ""}}'>{{fData.a9}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>芙丝SP375ML-箱</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{fData.a10 != ""}}'>{{fData.a10}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>芙丝ST375ML-箱</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{fData.a11 != ""}}'>{{fData.a11}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>芙丝SP800ML-箱</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{fData.a12 != ""}}'>{{fData.a12}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+					<view class='clearfix work-td'>
+						<view class='x6'><text>芙丝ST800ML-箱</text></view>
+						<view class='x6 text-center'>
+							<text wx:if='{{fData.a13 != ""}}'>{{fData.a13}}</text>
+							<text wx:else>-</text>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view wx:else class='padding-left-right margin-top text-center'>
+				<text class='text-gray'>暂无团购信息</text>
+			</view>
+		</view>
+    </view>
+</view>

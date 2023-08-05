@@ -1,0 +1,48 @@
+<import src="../tpl/popup_tpl.wxml" />
+
+<!--pages/customer/index.wxml-->
+<view class='main'>
+	<!--搜索框-->
+	<form class='clearfix'>
+		<view class='customer-search wBox bg-main'>
+			<view class='wBox-1'>
+				<input type="text" confirm-type="search" bindconfirm="searchSubmit" placeholder="请输入客户名称搜索" />
+			</view>
+			<view class='padding-left'>
+				<button bindtap='addStore' class='button button-small bg-red'>新增门店</button>
+			</view>
+			<view class='padding-left'>
+				<button bindtap='addPlace' class='button button-small bg-red'>新增场所</button>
+			</view>
+		</view>
+	</form>
+	<!--数据列表-->
+	<view class='clearfix index-k'>
+		<view class='clearfix'>
+			<view wx:if="{{cData.length > 0}}">
+				<block wx:for="{{cData}}">
+                    <view bindtap='customerDetaisl' data-guid='{{item.id}}' data-type='{{item.type}}' class='clearfix padding border-bottom'>
+                        <view class='height-big'>
+                            <text class='text-big'>{{item.storename}}</text>
+                        </view>
+                        <view class='wBox'>
+                            <view class='wBox-1'>
+                                <view class='height-small text-small' wx:if='{{item.address != ""}}'>{{item.address}}</view>
+                                <view class='height-small text-small' wx:else>-</view>
+                                <view class='height-small text-small'>上次拜访日期{{item.visitdate}}</view>
+                            </view>
+                            <view class='height-large text-gray'>
+                                <text class='iconfont icon-dingwei1'></text>
+                                <text>{{cArr['D' + index]}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </block>
+			</view>
+			<view class='text-center padding-big text-gray height-big' wx:else>暂无此类客户~</view>
+		</view>
+		<!--view class='clearfix height-small padding text-center'>
+			<text class='clearfix'>加载更多<text class='iconfont icon-gengduo'></text></text>
+		</view-->
+	</view>
+</view>

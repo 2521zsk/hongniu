@@ -1,0 +1,38 @@
+.v-filter {
+  background-color: #F4F5F7;
+  color: #000;
+  height: 40px;
+  width: 100%;
+  border-top: 1rpx solid #ececec;
+  display: flex;
+  flex-direction: row;
+}
+
+
+.p-picker1 {
+  background: #fff;
+  border: 1rpx solid #ececec; 
+  height: 40px;
+  width: 50%;
+}
+
+.picker1 {
+  width: 70%;
+  margin-left: 15%;
+  height: 40px;
+  line-height: 40px;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+}
+
+.picker1 image {
+  margin-top: 10px;
+  width: 20px;
+  height: 20px;
+}
+.p-lbl {
+  text-align: center;
+  width: 80%;
+  font-size: 32rpx;
+}

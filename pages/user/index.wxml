@@ -1,0 +1,151 @@
+<import src="../tpl/popup_tpl.wxml" />
+
+<!--pages/user/index.wxml-->
+<view class='main main-index'>
+    <!--内容-->
+    <view class='clearfix'>
+		<!--个人信息-->
+		<view class='clearfix padding-large-left-right padding-big-top-bottom bg-main'>
+			<view class='wBox'>
+				<view class='home-avatar'>
+					<image src='../images/default.png'></image>
+				</view>
+				<view class='wBox-1 padding' wx:if="{{hasLoginBtn == 0}}">
+					<view class='padding-left padding-small-top height-small'>
+						<text class='text-mix'>ID：{{usernumber}}</text>
+					</view>
+					<view class='padding-left padding-small-bottom height-small'>
+						<text class='text-mix'>角色：{{roleData[2]}}</text>
+					</view>
+				</view>
+				<view class='wBox-1 padding' wx:else>
+					<view bindtap="goLogin" class='padding-left padding-top height-big'>
+						<text class='text-mix'>立即登录</text>
+					</view>
+				</view>
+			</view>
+		</view>
+		<!--导航-->
+		<view class='clearfix'>
+			<block wx:if="{{roleData[0] == 1}}">
+				<!--促销员-->
+				<view bindtap='carryoutView' class='wBox height border-bottom'>
+					<view class='wBox40 text-center padding-top-bottom'>
+						<text class='iconfont text-big icon-chakan-copy text-blue'></text>
+					</view>
+					<view class='wBox-1 padding-top-bottom'>
+						<text>促销执行查看</text>
+					</view>
+					<view class='wBox30 text-center padding-top-bottom'>
+						<text class='iconfont icon-right-copy'></text>
+					</view>
+				</view>
+				<view bindtap='datareportView' class='wBox height border-bottom'>
+					<view class='wBox40 text-center padding-top-bottom'>
+						<text class='iconfont text-big icon-shuju text-green'></text>
+					</view>
+					<view class='wBox-1 padding-top-bottom'>
+						<text>数据上报查看</text>
+					</view>
+					<view class='wBox30 text-center padding-top-bottom'>
+						<text class='iconfont icon-right-copy'></text>
+					</view>
+				</view>
+				<view bindtap='checkView' class='wBox height border-bottom'>
+					<view class='wBox40 text-center padding-top-bottom'>
+						<text class='iconfont text-big icon-kaoqin text-blue'></text>
+					</view>
+					<view class='wBox-1 padding-top-bottom'>
+						<text>考勤查看</text>
+					</view>
+					<view class='wBox30 text-center padding-top-bottom'>
+						<text class='iconfont icon-right-copy'></text>
+					</view>
+				</view>
+			</block>
+			<block wx:else>
+				<!--推广员&督导-->
+				<view bindtap='carryoutViewX' class='wBox height border-bottom'>
+					<view class='wBox40 text-center padding-top-bottom'>
+						<text class='iconfont text-big icon-chakan-copy text-blue'></text>
+					</view>
+					<view class='wBox-1 padding-top-bottom'>
+						<text>促销执行查看</text>
+					</view>
+					<view class='wBox30 text-center padding-top-bottom'>
+						<text class='iconfont icon-right-copy'></text>
+					</view>
+				</view>
+				<view bindtap='datareportViewX' class='wBox height border-bottom'>
+					<view class='wBox40 text-center padding-top-bottom'>
+						<text class='iconfont text-big icon-shuju text-green'></text>
+					</view>
+					<view class='wBox-1 padding-top-bottom'>
+						<text>数据上报查看</text>
+					</view>
+					<view class='wBox30 text-center padding-top-bottom'>
+						<text class='iconfont icon-right-copy'></text>
+					</view>
+				</view>
+				<view bindtap='checkViewX' class='wBox height border-bottom'>
+					<view class='wBox40 text-center padding-top-bottom'>
+						<text class='iconfont text-big icon-kaoqin text-blue'></text>
+					</view>
+					<view class='wBox-1 padding-top-bottom'>
+						<text>考勤查看</text>
+					</view>
+					<view class='wBox30 text-center padding-top-bottom'>
+						<text class='iconfont icon-right-copy'></text>
+					</view>
+				</view>
+			</block>
+			<view bindtap='changePassword' class='wBox height border-bottom'>
+				<view class='wBox40 text-center padding-top-bottom'>
+					<text class='iconfont text-big icon-yuechi_o text-dot'></text>
+				</view>
+				<view class='wBox-1 padding-top-bottom'>
+					<text>修改密码</text>
+				</view>
+				<view class='wBox30 text-center padding-top-bottom'>
+					<text class='iconfont icon-right-copy'></text>
+				</view>
+			</view>
+			<view bindtap='logout' class='wBox height border-bottom'>
+				<view class='wBox40 text-center padding-top-bottom'>
+					<text class='iconfont text-big icon-tuichu text-red'></text>
+				</view>
+				<view class='wBox-1 padding-top-bottom'>
+					<text>退出登录</text>
+				</view>
+				<view class='wBox30 text-center padding-top-bottom'>
+					<text class='iconfont icon-right-copy'></text>
+				</view>
+			</view>
+		</view>
+	</view>
+    <!--底部-->
+    <view class='footer clearfix'>
+        <view class='wBox text-center'>
+            <view class='wBox-1'>
+                <view bindtap='viewIndex' class='icon iconfont icon-ziyuan'></view>
+                <view bindtap='viewIndex' class='txt'>我的促销点</view>
+            </view>
+            <view bindtap='checkWork' class='wBox-1' wx:if="{{roleData[0] == 2}}">
+                <view bindtap='viewIndex' class='icon iconfont icon-kaoqin1'></view>
+                <view bindtap='viewIndex' class='txt'>考勤</view>
+            </view>
+            <view bindtap='materielManage' class='wBox-1' wx:if="{{roleData[0] == 2}}">
+                <view bindtap='viewIndex' class='icon iconfont icon-wuliaoxianxing'></view>
+                <view bindtap='viewIndex' class='txt'>物料管理</view>
+            </view>
+            <view bindtap='customerManage' class='wBox-1' wx:if="{{roleData[0] == 2}}">
+                <view bindtap='viewIndex' class='icon iconfont icon-web-icon-'></view>
+                <view bindtap='viewIndex' class='txt'>客户管理</view>
+            </view>
+            <view class='wBox-1 text-main'>
+                <view class='icon iconfont icon-yonghu'></view>
+                <view class='txt'>个人中心</view>
+            </view>
+        </view>
+    </view>
+</view>

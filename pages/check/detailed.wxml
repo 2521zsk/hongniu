@@ -1,0 +1,89 @@
+<import src="../tpl/popup_tpl.wxml" />
+
+<!--pages/check/detailed.wxml-->
+<view class='main'>
+	<view class='clearfix padding-large-bottom'>
+		<view class='work-details'>
+			<view class='wBox'>
+				<view class='work-details-bt'>签到描述</view>
+				<view class='wBox-1'>
+					<text>{{cData.SignInRemark}}</text>
+				</view>
+			</view>
+			<view class='work-details-border'></view>
+		</view>
+		<view class='work-details'>
+			<view class='wBox'>
+				<view class='work-details-bt'>签到时间</view>
+				<view class='wBox-1'>
+					<text>{{cData.SignInTime}}</text>
+				</view>
+			</view>
+			<view class='work-details-border'></view>
+		</view>
+		<view class='work-details'>
+			<view class='wBox'>
+				<view class='work-details-bt'>签到地址</view>
+				<view class='wBox-1'>
+					<text>{{cData.SignInLocation}}</text>
+				</view>
+			</view>
+			<view class='work-details-border'></view>
+		</view>
+		<view class='work-details'>
+			<view class='wBox'>
+				<view class='work-details-bt'>签到照片</view>
+				<view class='wBox-1'>
+					<view wx:if="{{PhotoArr1.length > 0}}">
+						<block wx:for="{{PhotoArr1}}">
+							<image wx:if="{{item != '' && item != null && item != 0}}" src='{{item}}' data-src="{{item}}" data-arr="{{PhotoArr1}}" bindtap="previewImage" class='work-details-pic'></image>
+						</block>
+					</view>
+					<view wx:else>-</view>
+				</view>
+			</view>
+			<view class='work-details-border'></view>
+		</view>
+		<view class='work-details'>
+			<view class='wBox'>
+				<view class='work-details-bt'>签退描述</view>
+				<view class='wBox-1'>
+					<text>{{cData.SignOutRemark}}</text>
+				</view>
+			</view>
+			<view class='work-details-border'></view>
+		</view>
+		<view class='work-details'>
+			<view class='wBox'>
+				<view class='work-details-bt'>签退时间</view>
+				<view class='wBox-1'>
+					<text>{{cData.SignOutTime}}</text>
+				</view>
+			</view>
+			<view class='work-details-border'></view>
+		</view>
+		<view class='work-details'>
+			<view class='wBox'>
+				<view class='work-details-bt'>签退地址</view>
+				<view class='wBox-1'>
+					<text>{{cData.SignOutLocation}}</text>
+				</view>
+			</view>
+			<view class='work-details-border'></view>
+		</view>
+		<view class='work-details'>
+			<view class='wBox'>
+				<view class='work-details-bt'>签退照片</view>
+				<view class='wBox-1'>
+					<view wx:if="{{PhotoArr2.length > 0}}">
+						<block wx:for="{{PhotoArr2}}">
+							<image wx:if="{{item != '' && item != null && item != 0}}" src='{{item}}' data-src="{{item}}" data-arr="{{PhotoArr2}}" bindtap="previewImage" class='work-details-pic'></image>
+						</block>
+					</view>
+					<view wx:else>-</view>
+				</view>
+			</view>
+			<view class='work-details-border'></view>
+		</view>
+	</view>
+</view>

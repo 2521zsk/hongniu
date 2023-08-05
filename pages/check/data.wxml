@@ -1,0 +1,41 @@
+<import src="../tpl/popup_tpl.wxml" />
+
+<!--pages/check/data.wxml-->
+<view class='main'>
+	<!--搜索框-->
+	<form class='clearfix'>
+		<view class='carryout-search s2'>
+			<view class='wBox'>
+				<view class='wBox-1 padding-right'>
+					<picker mode="date" value="{{StartDate}}" start="{{S_Start}}" end="{{S_End}}" bindchange="StartDateChange">
+						<view class="picker carryout-picker">{{StartDate}}</view>
+					</picker>
+				</view>
+				<view class='wBox-1 padding-right'>
+					<picker mode="date" value="{{EndDate}}" start="{{E_Start}}" end="{{E_End}}" bindchange="EndDateChange">
+						<view class="picker carryout-picker">{{EndDate}}</view>
+					</picker>
+				</view>
+				<view class='wBox90'>
+					<button bindtap='clearDate' class='button button-block bg-main'>清空时间</button>
+				</view>
+			</view>
+		</view>
+	</form>
+    <!--内容-->
+    <view class='clearfix carryout-k s2'>
+		<view class='padding-left-right height-small'>
+			<view wx:if="{{cData.length > 0}}">
+				<block wx:for="{{cData}}">
+					<view bindtap='checkDetaisl' data-id='{{item.id}}' class='height-small margin-bottom'>
+						<view class='wBox bg-back padding'>
+							<view class='wBox-1'>日期：{{item.visitdate}}</view>
+							<view class='wBox30 text-right'><text class='iconfont text-big icon-right-copy'></text></view>
+						</view>
+					</view>
+				</block>
+			</view>
+			<view class='text-center padding-big text-gray height-big' wx:else>暂无此类数据~</view>
+		</view>
+    </view>
+</view>

@@ -1,0 +1,54 @@
+<import src="../tpl/popup_tpl.wxml" />
+
+<!--pages/roleselect/data.wxml-->
+<view class='main'>
+	<!--搜索框-->
+	<form class='clearfix'>
+		<view class='index-search bg-main'>
+			<input type="text" confirm-type="search" bindchange="searchSubmit" placeholder="请输入姓名搜索" />
+		</view>
+		<view class='carryout-search'>
+			<view class='wBox'>
+				<view class='wBox-1 padding-right'>
+					<picker mode="date" value="{{StartDate}}" start="{{S_Start}}" end="{{S_End}}" bindchange="StartDateChange">
+						<view class="picker carryout-picker">{{StartDate}}</view>
+					</picker>
+				</view>
+				<view class='wBox-1 padding-right'>
+					<picker mode="date" value="{{EndDate}}" start="{{E_Start}}" end="{{E_End}}" bindchange="EndDateChange">
+						<view class="picker carryout-picker">{{EndDate}}</view>
+					</picker>
+				</view>
+				<view class='wBox90'>
+					<button bindtap='clearDate' class='button button-block bg-main'>清空时间</button>
+				</view>
+			</view>
+		</view>
+		<view class='carryout-role'>
+			<view class='wBox'>
+				<view class='wBox-1 padding-right'>
+					<picker name="RoleTypeID" bindchange="RoleTypeChange" value="{{RoleTypeInx}}" range="{{RoleTypeArr}}" range-key="name">
+						<view class="picker carryout-picker">{{RoleTypeArr[RoleTypeInx].name}}</view>
+					</picker>
+				</view>
+				<view class='wBox90'>
+					<button bindtap='cList' class='button button-block bg-main'>搜索</button>
+				</view>
+			</view>
+		</view>
+	</form>
+    <!--内容-->
+    <view class='clearfix carryout-k2'>
+		<view class='padding-left-right height-small'>
+			<view wx:if="{{cData.length > 0}}">
+				<block wx:for="{{cData}}">
+					<view bindtap='datareportView' data-uid='{{item.orgstructid}}' class='clearfix padding-top-bottom border-bottom'>
+						<view class='text-big margin-small-bottom'>姓名：{{item.orgname}}</view>
+						<view>角色：{{item.rolename}}</view>
+					</view>
+				</block>
+			</view>
+			<view class='text-center padding-big text-gray height-big' wx:else>暂无此类数据~</view>
+		</view>
+    </view>
+</view>

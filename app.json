@@ -1,0 +1,59 @@
+{
+	"pages": [
+		"pages/index/index",
+		"pages/work/index",
+		"pages/work/signin",
+		"pages/work/carryout",
+		"pages/work/signout",
+		"pages/work/checkup",
+		"pages/dataupload/index",
+		"pages/reported/index",
+		"pages/dataupload/a2",
+		"pages/dataupload/a3",
+		"pages/dataupload/a4",
+		"pages/dataupload/b2",
+		"pages/dataupload/b3",
+		"pages/dataupload/b4",
+		"pages/dataupload/b5",
+		"pages/checkwork/index",
+		"pages/checkwork/signin",
+		"pages/checkwork/signout",
+		"pages/materiel/index",
+		"pages/materiel/addmateriel",
+		"pages/customer/index",
+		"pages/customer/details",
+		"pages/customer/addstore",
+		"pages/customer/addplace",
+		"pages/login/index",
+		"pages/user/index",
+		"pages/user/psw",
+		"pages/upload/upload",
+		"pages/carryout/index",
+		"pages/carryout/list",
+		"pages/carryout/details",
+		"pages/check/index",
+		"pages/check/list",
+		"pages/check/data",
+		"pages/check/details",
+		"pages/check/detailed",
+		"pages/roleselect/index",
+		"pages/roleselect/data",
+		"pages/roleselect/check",
+		"pages/datareport/index",
+		"pages/datareport/list",
+		"pages/datareport/details",
+		"pages/chooserole/chooserole"
+	],
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#6192e6",
+		"navigationBarTitleText": "华彬快速消费品",
+		"navigationBarTextStyle": "white"
+	},
+	"permission": {
+		"scope.userLocation": {
+			"desc": "你的位置信息将用于促销信息的录入操作"
+		}
+	},
+	"sitemapLocation": "sitemap.json"
+}

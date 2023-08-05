@@ -1,0 +1,137 @@
+<import src="../tpl/popup_tpl.wxml" />
+
+<!--pages/dataupload/a2.wxml-->
+<view class='main'>
+	<!--表单-->
+	<form bindsubmit="formSubmit" class='clearfix padding'>
+        <input type='text' value='{{ActivityID}}' name='ActivityID' class='hidden' />
+        <input type='text' value='{{Guid}}' name='Guid' class='hidden' />
+        <input type='text' value='{{usernumber}}' name='UserNumber' class='hidden' />
+		<!--进货-->
+		<view class='clearfix margin-bottom'>
+			<view class='height-big padding-left-right'>
+				<text class='text-big'>进货</text>
+			</view>
+			<view class='work-input'>
+				<view class='wBox'>
+					<view class='work-input-bt long'>红牛-箱</view>
+					<view class='wBox-1'>
+						<input type='number' name='A1' placeholder='请输入数量' class='work-input-bd' />
+					</view>
+				</view>
+				<view class='work-input-border'></view>
+			</view>
+			<view class='work-input'>
+				<view class='wBox'>
+					<view class='work-input-bt long'>战马（罐）-箱</view>
+					<view class='wBox-1'>
+						<input type='number' name='A2' placeholder='请输入数量' class='work-input-bd' />
+					</view>
+				</view>
+				<view class='work-input-border'></view>
+			</view>
+			<view class='work-input'>
+				<view class='wBox'>
+					<view class='work-input-bt long'>战马（瓶）-箱</view>
+					<view class='wBox-1'>
+						<input type='number' name='A3' placeholder='请输入数量' class='work-input-bd' />
+					</view>
+				</view>
+				<view class='work-input-border'></view>
+			</view>
+			<view class='work-input'>
+				<view class='wBox'>
+					<view class='work-input-bt long'>果倍爽200ML-组</view>
+					<view class='wBox-1'>
+						<input type='number' name='A4' placeholder='请输入数量' class='work-input-bd' />
+					</view>
+				</view>
+				<view class='work-input-border'></view>
+			</view>
+			<view class='work-input'>
+				<view class='wBox'>
+					<view class='work-input-bt long'>果倍爽330ML-箱</view>
+					<view class='wBox-1'>
+						<input type='number' name='A5' placeholder='请输入数量' class='work-input-bd' />
+					</view>
+				</view>
+				<view class='work-input-border'></view>
+			</view>
+			<view class='work-input'>
+				<view class='wBox'>
+					<view class='work-input-bt long'>唯他可可330ML-箱</view>
+					<view class='wBox-1'>
+						<input type='number' name='A6' placeholder='请输入数量' class='work-input-bd' />
+					</view>
+				</view>
+				<view class='work-input-border'></view>
+			</view>
+			<view class='work-input'>
+				<view class='wBox'>
+					<view class='work-input-bt long'>唯他可可1L-箱</view>
+					<view class='wBox-1'>
+						<input type='number' name='A7' placeholder='请输入数量' class='work-input-bd' />
+					</view>
+				</view>
+				<view class='work-input-border'></view>
+			</view>
+			<view class='work-input'>
+				<view class='wBox'>
+					<view class='work-input-bt long'>芙丝330ML-箱</view>
+					<view class='wBox-1'>
+						<input type='number' name='A8' placeholder='请输入数量' class='work-input-bd' />
+					</view>
+				</view>
+				<view class='work-input-border'></view>
+			</view>
+			<view class='work-input'>
+				<view class='wBox'>
+					<view class='work-input-bt long'>芙丝500ML-箱</view>
+					<view class='wBox-1'>
+						<input type='number' name='A9' placeholder='请输入数量' class='work-input-bd' />
+					</view>
+				</view>
+				<view class='work-input-border'></view>
+			</view>
+			<view class='work-input'>
+				<view class='wBox'>
+					<view class='work-input-bt long'>芙丝SP375ML-箱</view>
+					<view class='wBox-1'>
+						<input type='number' name='A10' placeholder='请输入数量' class='work-input-bd' />
+					</view>
+				</view>
+				<view class='work-input-border'></view>
+			</view>
+			<view class='work-input'>
+				<view class='wBox'>
+					<view class='work-input-bt long'>芙丝ST375ML-箱</view>
+					<view class='wBox-1'>
+						<input type='number' name='A11' placeholder='请输入数量' class='work-input-bd' />
+					</view>
+				</view>
+				<view class='work-input-border'></view>
+			</view>
+			<view class='work-input'>
+				<view class='wBox'>
+					<view class='work-input-bt long'>芙丝SP800ML-箱</view>
+					<view class='wBox-1'>
+						<input type='number' name='A12' placeholder='请输入数量' class='work-input-bd' />
+					</view>
+				</view>
+				<view class='work-input-border'></view>
+			</view>
+			<view class='work-input'>
+				<view class='wBox'>
+					<view class='work-input-bt long'>芙丝ST800ML-箱</view>
+					<view class='wBox-1'>
+						<input type='number' name='A13' placeholder='请输入数量' class='work-input-bd' />
+					</view>
+				</view>
+				<view class='work-input-border'></view>
+			</view>
+		</view>
+		<view class='clearfix padding-top-bottom'>
+			<button form-type="submit" class='button button-block bg-main work-btn'>下一步</button>
+		</view>
+	</form>
+</view>

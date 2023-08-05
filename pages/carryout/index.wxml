@@ -1,0 +1,44 @@
+<import src="../tpl/popup_tpl.wxml" />
+
+<!--pages/carryout/index.wxml-->
+<view class='main'>
+	<!--搜索框-->
+	<form class='clearfix'>
+		<view class='index-search bg-main'>
+			<input type="text" confirm-type="search" bindconfirm="searchSubmit" placeholder="请输入门店名称搜索" />
+		</view>
+		<view class='carryout-search'>
+			<view class='wBox'>
+				<view class='wBox-1 padding-right'>
+					<picker mode="date" value="{{StartDate}}" start="{{S_Start}}" end="{{S_End}}" bindchange="StartDateChange">
+						<view class="picker carryout-picker">{{StartDate}}</view>
+					</picker>
+				</view>
+				<view class='wBox-1 padding-right'>
+					<picker mode="date" value="{{EndDate}}" start="{{E_Start}}" end="{{E_End}}" bindchange="EndDateChange">
+						<view class="picker carryout-picker">{{EndDate}}</view>
+					</picker>
+				</view>
+				<view class='wBox90'>
+					<button bindtap='clearDate' class='button button-block bg-main'>清空时间</button>
+				</view>
+			</view>
+		</view>
+	</form>
+    <!--内容-->
+    <view class='clearfix carryout-k'>
+		<view class='padding-left-right height-small'>
+			<view wx:if="{{cData.length > 0}}">
+				<block wx:for="{{cData}}">
+					<view bindtap='carryoutDetaisl' data-id='{{item.RowID}}' class='clearfix padding-top-bottom border-bottom'>
+						<view class='text-big margin-small-bottom'>活动名称：{{item.ActivityName}}</view>
+						<view class='margin-small-bottom'>门店名称：{{item.StoreName}}</view>
+						<view class='margin-small-bottom'>地址：{{item.Address}}</view>
+						<view>执行日期：{{item.ExecuteDate}}</view>
+					</view>
+				</block>
+			</view>
+			<view class='text-center padding-big text-gray height-big' wx:else>暂无此类数据~</view>
+		</view>
+    </view>
+</view>

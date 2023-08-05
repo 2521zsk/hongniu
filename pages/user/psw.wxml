@@ -1,0 +1,33 @@
+<import src="../tpl/popup_tpl.wxml" />
+
+<!--pages/user/psw.wxml-->
+<view class='main'>
+	<!--logo-->
+	<view class='login-logo'>
+		<image src='../images/logo.png'></image>
+	</view>
+	<!--表单-->
+	<form class='clearfix padding-large-left-right'>
+		<view class='login-int wBox margin-bottom'>
+			<view class='wBox30 text-center'><text class='iconfont icon-mima'></text></view>
+			<input type='text' name='oldpassword' bindinput='oldpasswordInputEvent' password="true" placeholder='请输入原密码' />
+			<text class='login-tips'></text>
+		</view>
+		<view class='login-int wBox margin-bottom'>
+			<view class='wBox30 text-center'><text class='iconfont icon-mima'></text></view>
+			<input type='text' name='newpassword' bindinput='newpasswordInputEvent' password="true" placeholder='请输入新密码' />
+			<text class='login-tips'></text>
+		</view>
+		<view class='login-int wBox'>
+			<view class='wBox30 text-center'><text class='iconfont icon-mima'></text></view>
+			<input type='text' name='reppassword' bindinput='reppasswordInputEvent' password="true" placeholder='请确认新密码' />
+			<text class='login-tips'></text>
+		</view>
+		<view class='height-small margin-bottom padding-left-right'>
+			<text class='text-small text-gray padding-small-left-right'>建议密码由6~16位英文字母、数字或符号组成</text>
+		</view>
+		<view class='clearfix padding-top'>
+			<button bindtap='modifyPswSubmit' class='button button-block bg-main login-btn'>确 认</button>
+		</view>
+	</form>
+</view>

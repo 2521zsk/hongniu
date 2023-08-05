@@ -1,0 +1,119 @@
+<import src="../tpl/popup_tpl.wxml" />
+
+<!--index.wxml-->
+<view class='main main-index'>
+	<!--搜索框-->
+	<form class='clearfix'>
+		<view class='index-search bg-main' wx:if="{{hasLoginBtn == 0}}">
+			<input type="text" confirm-type="search" bindconfirm="searchSubmit" placeholder="请输入门店名称搜索" />
+		</view>
+		<view class='index-search bg-main' wx:else>
+			<input type="text" confirm-type="search" placeholder="请点击下方登录按钮后再进行搜索操作" />
+		</view>
+	</form>
+    <!--内容-->
+    <view class='clearfix index-k'>
+        <!--幻灯片-->
+        <swiper class='index-banner' indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+            <block wx:for="{{imgUrls}}">
+                <swiper-item class="index-list">
+                    <image src="{{item}}" class="index-banner-img" mode='aspectFill' />
+                </swiper-item>
+            </block>
+        </swiper>
+		<!--促销点列表-->
+		<view class='clearfix' wx:if="{{hasLoginBtn == 0}}">
+			<view wx:if="{{workData.length > 0}}">
+				<block wx:for="{{workData}}">
+					<!--
+					<view class='work-list' bindtap='viewWork' data-id='{{index}}'>
+						<view class='wBox'>
+							<view class='work-pic'>
+								<image src='../images/list_default.png'></image>
+								<text class='text-center'>6006094565</text>
+							</view>
+							<view class='wBox-1'>
+								<view class='work-txt'>
+									<text class='text-big'>2018大湾区跆拳道公开赛</text>
+								</view>
+								<view class='work-txt'>
+									<text>粤北区域特通渠道其他</text>
+								</view>
+								<view class='work-txt'>
+									<text>邓教练131-5305-2076</text>
+								</view>
+								<view class='work-txt'>
+									<text>广东省，肇庆市，端州区</text>
+								</view>
+								<view class='work-txt'>
+									<text>2018工业区-篮球赛</text>
+								</view>
+							</view>
+						</view>
+					</view>
+					-->
+					<view class='work-list' bindtap='viewWork' data-inx='{{index}}'>
+						<view class='wBox'>
+							<view class='work-pic'>
+								<image wx:if='{{item.storephoto == ""}}' src='../images/default.png'></image>
+								<image wx:else src='{{item.storephoto}}'></image>
+							</view>
+							<view class='wBox-1'>
+								<view class='work-txt'>
+									<text class='text-big'>{{item.activityname}}</text>
+								</view>
+								<view class='work-txt'>
+									<text>{{item.storename}}</text>
+                                    <text wx:if='{{item.storecode}}'>【{{item.storecode}}】</text>
+								</view>
+								<view class='work-txt'>
+									<text>{{item.contactname}}{{item.contactphone}}</text>
+								</view>
+								<view class='work-txt'>
+									<text>{{item.address}}</text>
+								</view>
+							</view>
+						</view>
+					</view>
+				</block>
+			</view>
+			<view class='text-center padding-big text-gray height-big' wx:else>暂无此类促销点~</view>
+		</view>
+		<!--登录按钮-->
+		<view class="clearfix text-center padding-big" wx:else>
+			<view class="button bg-main" bindtap="goLogin"> 立即登录 </view>
+			<view class="height-small margin-big-top">
+				<text>温馨提示：请使用管理平台所分配的账号进行登录后再进行操作，登录后可以方便、及时的上报促销数据。</text>
+				<text class="text-gray">（账号问题请咨询平台管理员）</text>
+			</view>
+		</view>
+		<!--view class='clearfix height-small padding text-center'>
+			<text class='clearfix'>加载更多<text class='iconfont icon-gengduo'></text></text>
+		</view-->
+    </view>
+    <!--底部-->
+    <view class='footer clearfix'>
+        <view class='wBox text-center'>
+            <view class='wBox-1 text-main' wx:if="{{roleData[0] == 1 || roleData[0] == 2 ||roleData[0] == 3}}">
+                <view class='icon iconfont icon-ziyuan'></view>
+                <view class='txt'>我的促销点</view>
+            </view>
+            <view bindtap='checkWork' class='wBox-1' wx:if="{{roleData[0] == 2}}">
+                <view bindtap='viewIndex' class='icon iconfont icon-kaoqin1'></view>
+                <view bindtap='viewIndex' class='txt'>考勤</view>
+            </view>
+            <view bindtap='materielManage' class='wBox-1' wx:if="{{roleData[0] == 2}}">
+                <view bindtap='viewIndex' class='icon iconfont icon-wuliaoxianxing'></view>
+                <view bindtap='viewIndex' class='txt'>物料管理</view>
+            </view>
+            <view bindtap='customerManage' class='wBox-1' wx:if="{{roleData[0] == 2}}">
+                <view bindtap='viewIndex' class='icon iconfont icon-web-icon-'></view>
+                <view bindtap='viewIndex' class='txt'>客户管理</view>
+            </view>
+            <view class='wBox-1'>
+                <view bindtap='viewHome' class='icon iconfont icon-yonghu'></view>
+                <view bindtap='viewHome' class='txt'>个人中心</view>
+            </view>
+        </view>
+    </view>
+</view>

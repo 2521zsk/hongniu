@@ -1,0 +1,23 @@
+<import src="../tpl/popup_tpl.wxml" />
+
+<!--pages/dataupload/a4.wxml-->
+<view class='main'>
+	<!--表单-->
+	<form bindsubmit="formSubmit" class='clearfix padding'>
+        <input type='text' value='{{ActivityID}}' name='ActivityID' class='hidden' />
+        <input type='text' value='{{Guid}}' name='Guid' class='hidden' />
+        <input type='text' value='{{usernumber}}' name='UserNumber' class='hidden' />
+		<!--备注-->
+		<view class='clearfix margin-bottom'>
+			<view class='height-big padding-left-right'>
+				<text class='text-big'>备注</text>
+			</view>
+		<view class='work-int margin-bottom'>
+			<textarea value='' name='Remark' placeholder="请输入备注..." />
+		</view>
+		</view>
+		<view class='clearfix padding-top-bottom'>
+			<button form-type="submit" class='button button-block bg-main work-btn'>提 交</button>
+		</view>
+	</form>
+</view>

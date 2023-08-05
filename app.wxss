@@ -1,0 +1,428 @@
+/*公共样式*/
+/*网格*/
+.line{margin:0;padding:0}
+.x1,.x10,.x11,.x12,.x2,.x3,.x4,.x5,.x6,.x7,.x8,.x9{position:relative;min-height:1px}
+.line-large{margin-left:-15px;margin-right:-15px}
+.line-large .x1,.line-large .x10,.line-large .x11,.line-large .x12,.line-large .x2,.line-large .x3,.line-large .x4,.line-large .x5,.line-large .x6,.line-large .x7,.line-large .x8,.line-large .x9{position:relative;min-height:1px;padding-right:15px;padding-left:15px}
+.line-big{margin-left:-10px;margin-right:-10px}
+.line-big .x1,.line-big .x10,.line-big .x11,.line-big .x12,.line-big .x2,.line-big .x3,.line-big .x4,.line-big .x5,.line-big .x6,.line-big .x7,.line-big .x8,.line-big .x9{position:relative;min-height:1px;padding-right:10px;padding-left:10px}
+.line-middle{margin-left:-5px;margin-right:-5px}
+.line-middle .x1,.line-middle .x10,.line-middle .x11,.line-middle .x12,.line-middle .x2,.line-middle .x3,.line-middle .x4,.line-middle .x5,.line-middle .x6,.line-middle .x7,.line-middle .x8,.line-middle .x9{position:relative;min-height:1px;padding-right:5px;padding-left:5px}
+.line-small{margin-left:-2px;margin-right:-2px}
+.line-small .x1,.line-small .x10,.line-small .x11,.line-small .x12,.line-small .x2,.line-small .x3,.line-small .x4,.line-small .x5,.line-small .x6,.line-small .x7,.line-small .x8,.line-small .x9{position:relative;min-height:1px;padding-right:2px;padding-left:2px}
+.line .x1,.line .x10,.line .x11,.line .x12,.line .x2,.line .x3,.line .x4,.line .x5,.line .x6,.line .x7,.line .x8,.line .x9{position:relative;min-height:1px;padding-right:0px;padding-left:0px}
+.x1,.x10,.x11,.x12,.x2,.x3,.x4,.x5,.x6,.x7,.x8,.x9{float:left}
+.x1{width:8.33333333%}
+.x2{width:16.66666667%}
+.x3{width:25%}
+.x4{width:33.33333333%}
+.x5{width:41.66666667%}
+.x6{width:50%}
+.x7{width:58.33333333%}
+.x8{width:66.66666667%}
+.x9{width:75%}
+.x10{width:83.33333333%}
+.x11{width:91.66666667%}
+.x12{width:100%}
+/*快速设置浮动*/
+.float-left{float:left!important}
+.float-right{float:right!important}
+/*清除浮动*/
+.clearfix:after,.line-big:after,.line-middle:after,.line-small:after,.line:after{content:" ";display:block;height:0;clear:both;visibility:hidden;overflow:hidden}
+.clearfix,.line,.line-big,.line-middle,.line-small{display:block}
+.clear{clear:both}
+.hidden{display:none}
+/*字号*/
+.text-large{font-size:48rpx}
+.text-normal{font-size:40rpx}
+.text-middle{font-size:36rpx}
+.text-big{font-size:32rpx}
+.text-default{font-size:28rpx}
+.text-small{font-size:24rpx}
+.text-little{font-size:20rpx}
+/*按钮*/
+.button{border:solid 1px #ddd;background:0 0;border-radius:4px;font-size:14px;padding:6px 15px;margin:0;display:inline-block;line-height:20px;transition:all 1s cubic-bezier(.175,.885,.32,1) 0s}
+.button[disabled]{pointer-events:none;cursor:not-allowed;webkit-box-shadow:none;box-shadow:none;filter:alpha(opacity=50);opacity:.5}
+.button:active{background-image:none;outline:0;transition:all .3s cubic-bezier(.175,.885,.32,1) 0s}
+.button:hover{transition:all .3s cubic-bezier(.175,.885,.32,1) 0s}
+.button-block{display:block;width:100%}
+.button-large{padding:15px 20px;font-size:24px;line-height:24px}
+.button-big{padding:10px 15px;font-size:18px;line-height:22px}
+.button-middle{padding:7px 15px;}
+.button-small{padding:5px 10px;font-size:12px;font-weight:400;line-height:18px}
+.button-little{padding:3px 5px;font-size:12px;font-weight:400;line-height:16px}
+.button.bg-black,.button.bg-blue,.button.bg-dot,.button.bg-gray,.button.bg-green,.button.bg-main,.button.bg-red,.button.bg-sub,.button.bg-yellow{color:#fff}
+/*内外边距,全,上,下,左,右*/
+.padding-large{padding:30px}
+.padding-large-top{padding-top:30px}
+.padding-large-right{padding-right:30px}
+.padding-large-bottom{padding-bottom:30px}
+.padding-large-left{padding-left:30px}
+.padding-large-top-bottom{padding-top:30px;padding-bottom:30px}
+.padding-large-left-right{padding-left:30px;padding-right:30px}
+.padding-big{padding:20px}
+.padding-big-top{padding-top:20px}
+.padding-big-right{padding-right:20px}
+.padding-big-bottom{padding-bottom:20px}
+.padding-big-left{padding-left:20px}
+.padding-big-top-bottom{padding-top:20px;padding-bottom:20px}
+.padding-big-left-right{padding-left:20px;padding-right:20px}
+.padding{padding:10px}
+.padding-top{padding-top:10px}
+.padding-right{padding-right:10px}
+.padding-bottom{padding-bottom:10px}
+.padding-left{padding-left:10px}
+.padding-top-bottom{padding-top:10px;padding-bottom:10px}
+.padding-left-right{padding-left:10px;padding-right:10px}
+.padding-small{padding:5px}
+.padding-small-top{padding-top:5px}
+.padding-small-right{padding-right:5px}
+.padding-small-bottom{padding-bottom:5px}
+.padding-small-left{padding-left:5px}
+.padding-small-top-bottom{padding-top:5px;padding-bottom:5px}
+.padding-small-left-right{padding-left:5px;padding-right:5px}
+.padding-little{padding:2px}
+.padding-little-top{padding-top:2px}
+.padding-little-right{padding-right:2px}
+.padding-little-bottom{padding-bottom:2px}
+.padding-little-left{padding-left:2px}
+.padding-little-top-bottom{padding-top:2px;padding-bottom:2px}
+.padding-little-left-right{padding-left:2px;padding-right:2px}
+.margin-large{margin:30px}
+.margin-large-top{margin-top:30px}
+.margin-large-right{margin-right:30px}
+.margin-large-bottom{margin-bottom:30px}
+.margin-large-left{margin-left:30px}
+.margin-big{margin:20px}
+.margin-big-top{margin-top:20px}
+.margin-big-right{margin-right:20px}
+.margin-big-bottom{margin-bottom:20px}
+.margin-big-left{margin-left:20px}
+.margin{margin:10px!important;clear:both}
+.margin-top{margin-top:10px}
+.margin-right{margin-right:10px}
+.margin-bottom{margin-bottom:10px}
+.margin-left{margin-left:10px}
+.margin-small{margin:5px}
+.margin-small-top{margin-top:5px}
+.margin-small-right{margin-right:5px}
+.margin-small-bottom{margin-bottom:5px}
+.margin-small-left{margin-left:5px}
+.margin-little{margin:2px}
+.margin-little-top{margin-top:2px}
+.margin-little-right{margin-right:2px}
+.margin-little-bottom{margin-bottom:2px}
+.margin-little-left{margin-left:2px}
+/*对齐*/
+.text-left{text-align:left}
+.text-center{text-align:center}
+.text-right{text-align:right}
+/*边框,全,上,下,左,右*/
+.border{border:solid 1px #ddd}
+.border-top{border-top:solid 1px #ddd}
+.border-right{border-right:solid 1px #ddd}
+.border-bottom{border-bottom:solid 1px #ddd}
+.border-left{border-left:solid 1px #ddd}
+.border-left-right{border-left:solid 1px #ddd;border-right:solid 1px #ddd}
+.border-top-bottom{border-top:solid 1px #ddd;border-bottom:solid 1px #ddd}
+.border-large{border-width:10px}
+.border-big{border-width:5px}
+.border-middle{border-width:3px}
+.border-small{border-width:2px}
+/*行距*/
+.height-large{line-height:40px}
+.height-big{line-height:30px}
+.height{line-height:24px}
+.height-small{line-height:20px}
+.height-little{line-height:16px}
+/*不变文本*/
+.button.border-black,.pager-next.border-black,.pager-prev.border-black,.pager.border-black a,.text-black,a.text-black:link,a.text-black:visited,blockquote.border-black strong{color:#000}
+a.text-black:hover{color:#666}
+.button.border-gray,.pager-next.border-gray,.pager-prev.border-gray,.pager.border-gray a,.text-gray,a.text-gray:link,a.text-gray:visited,blockquote.border-gray strong{color:#999}
+.button.border-ash,.pager-next.border-ash,.pager-prev.border-ash,.pager.border-ash a,.text-ash,a.text-ash:link,a.text-ash:visited,blockquote.border-ash strong{color:#666}
+.button.border-white,.pager-next.border-white,.pager-prev.border-white,.pager.border-white a,.text-white,a.text-white:link,a.text-white:visited,blockquote.border-white{color:#fff}
+.alert-red,.badge.bg-red-light,.button.bg-red-light,.button.border-red,.check-error,.pager-next.border-red,.pager-prev.border-red,.pager.border-red a,.text-red,a.text-red:link,a.text-red:visited,blockquote.border-red strong{color:#FF0000}
+.alert-yellow,.badge.bg-yellow-light,.button.bg-yellow-light,.button.border-yellow,.check-warning,.pager-next.border-yellow,.pager-prev.border-yellow,.pager.border-yellow a,.text-yellow,a.text-yellow:link,a.text-yellow:visited,blockquote.border-yellow strong{color:#f60}
+.alert-blue,.badge.bg-blue-light,.button.bg-blue-light,.button.border-blue,.pager-next.border-blue,.pager-prev.border-blue,.pager.border-blue a,.text-blue,a.text-blue:link,a.text-blue:visited,blockquote.border-blue strong{color:#0ae}
+.alert-green,.badge.bg-green-light,.button.bg-green-light,.button.border-green,.check-success,.pager-next.border-green,.pager-prev.border-green,.pager.border-green a,.text-green,a.text-green:link,a.text-green:visited,blockquote.border-green strong{color:#2c7}
+.button.border-red-light,.pager.border-red-light a,.text-red-light,a.text-red-light:link,a.text-red-light:visited,blockquote.border-red-light strong{color:#fdc}
+.button.border-yellow-light,.pager-next.border-yellow-light,.pager-prev.border-yellow-light,.pager.border-yellow-light a,.text-yellow-light,a.text-yellow-light:link,a.text-yellow-light:visited,blockquote.border-yellow-light strong{color:#fec}
+.button.border-blue-light,.pager-next.border-blue-light,.pager-prev.border-blue-light,.pager.border-blue-light a,.text-blue-light,a.text-blue-light:link,a.text-blue-light:visited,blockquote.border-blue-light strong{color:#def}
+.button.border-green-light,.pager-next.border-green-light,.pager-prev.border-green-light,.pager.border-green-light a,.text-green-light,a.text-green-light:link,a.text-green-light:visited,blockquote.border-green-light strong{color:#ded}
+.bg-inverse,.bg-inverse a{color:#fff}
+.bg-inverse a:hover,a.text-white:hover{color:#ddd}
+/*不变背景*/
+.bg,.bg-inverse .nav-menu.nav-inline.nav-big ul a:hover,.bg-inverse .nav.nav-menu .active ul a:hover,.bg-inverse .nav.nav-menu ul a:hover,.bg-inverse .nav.nav-menu.nav-pills ul a:hover,.bg-inverse .nav.nav-menu.nav-tabs ul a:hover,.button.active,.nav-menu ul a:hover,.nav-menu.nav-pills .active ul a:hover,.navbar-body .nav ul a:hover,.pointer.border .active,.table .current,.table .current td,.table .current th{background-color:#f5f5f5}
+.bg-black,.border-black .button.active,.nav-main.border-black .nav-head,.nav-pills.border-black .active a,.pagination.border-black .active,.pointer.border-black .active{background-color:#000}
+.bg-gray,.border-gray .button.active,.nav-main.border-gray .nav-head,.nav-pills.border-gray .active a,.pagination.border-gray .active,.pointer.border-gray .active{background-color:#999}
+.bg-white,.border-white .button.active,.button.bg,.nav-main.border-white .nav-head,.nav-pills.border-white .active a,.pagination.border-white .active,.pointer.border-white .active{background-color:#fff}
+.bg-red,.border-red .button.active,.nav-main.border-red .nav-head,.nav-pills.border-red .active a,.pagination.border-red .active,.pointer.border-red .active{background-color:#e33}
+.bg-yellow,.border-yellow .button.active,.nav-main.border-yellow .nav-head,.nav-pills.border-yellow .active a,.pagination.border-yellow .active,.pointer.border-yellow .active{background-color:#f60}
+.bg-blue,.border-blue .button.active,.nav-main.border-blue .nav-head,.nav-pills.border-blue .active a,.pagination.border-blue .active,.pointer.border-blue .active{background-color:#0ae}
+.bg-green,.border-green .button.active,.nav-pills.border-green .active a,.pagination.border-green .active,.pointer.border-green .active{background-color:#2c7}
+.alert-red,.bg-red-light,.border-red-light .button.active,.nav-main.border-red-light .nav-head,.nav-pills.border-red-light .active a,.pagination.border-red-light .active,.pointer.border-red-light .active,.table .red,.table .red td,.table .red th{background-color:#fee}
+.alert-yellow,.bg-yellow-light,.border-yellow-light .button.active,.nav-main.border-yellow-light .nav-head,.nav-pills.border-yellow-light .active a,.pagination.border-yellow-light .active,.pointer.border-yellow-light .active,.table .yellow,.table .yellow td,.table .yellow th{background-color:#ffd}
+.alert-blue,.bg-blue-light,.border-blue-light .button.active,.nav-main.border-blue-light .nav-head,.nav-pills.border-blue-light .active a,.pagination.border-blue-light .active,.pointer.border-blue-light .active,.table .blue,.table .blue td,.table .blue th{background-color:#eff}
+.alert-green,.bg-green-light,.border-green-light .button.active,.nav-main.border-green-light .nav-head,.nav-pills.border-green-light .active a,.pagination.border-green-light .active,.pointer.border-green-light .active,.table .green,.table .green td,.table .green th{background-color:#efd}
+/*不变边框*/
+.border-dashed{border-style:dashed}
+.border-dotted{border-style:dotted}
+.border-double{border-style:double}
+.border-inset{border-style:inset}
+.border-outset{border-style:outset}
+.border-black,.border-black .button,.border-black .tab-body,.border-black .tab-nav li a,.button.bg-black,.nav-main.border-black .nav-head,.nav-main.border-black a,.nav.border-black .active a,.nav.nav-tabs.border-black,.pager.border-black a,.pagination.border-black li,.pointer.border-black li,.selected.border-black{border-color:#000}
+.border-gray,.border-gray .button,.border-gray .tab-body,.border-gray .tab-nav li a,.button.bg-gray,.nav-main.border-gray .nav-head,.nav-main.border-gray a,.nav.border-gray .active a,.nav.nav-tabs.border-gray,.pager.border-gray a,.pagination.border-gray li,.pointer.border-gray li,.selected.border-gray{border-color:#999}
+.border-white,.border-white .button,.border-white .tab-body,.border-white .tab-nav li a,.button.bg-white,.nav-main.border-white .nav-head,.nav-main.border-white a,.nav.border-white .active a,.nav.nav-tabs.border-white,.pager.border-white a,.pagination.border-white li,.pointer.border-white li,.selected.border-white{border-color:#fff}
+.border-red,.border-red .button,.border-red .tab-body,.border-red .tab-nav li a,.button.bg-red,.check-error .input,.nav-main.border-red .nav-head,.nav-main.border-red a,.nav.border-red .active a,.nav.nav-tabs.border-red,.pager.border-red a,.pagination.border-red li,.pointer.border-red li,.selected.border-red{border-color:#e33}
+.border-yellow,.border-yellow .button,.border-yellow .tab-body,.border-yellow .tab-nav li a,.button.bg-yellow,.check-warning .input,.nav-main.border-yellow .nav-head,.nav-main.border-yellow a,.nav.border-yellow .active a,.nav.nav-tabs.border-yellow,.pager.border-yellow a,.pagination.border-yellow li,.pointer.border-yellow li,.selected.border-yellow{border-color:#f60}
+.border-blue,.border-blue .button,.border-blue .tab-body,.border-blue .tab-nav li a,.button.bg-blue,.nav-main.border-blue .nav-head,.nav-main.border-blue a,.nav.border-blue .active a,.nav.nav-tabs.border-blue,.pager.border-blue a,.pagination.border-blue li,.pointer.border-blue li,.selected.border-blue{border-color:#0ae}
+.border-green,.border-green .button,.border-green .tab-body,.border-green .tab-nav li a,.button.bg-green,.check-success .input,.nav-main.border-green .nav-head,.nav-main.border-green a,.nav.border-green .active a,.nav.nav-tabs.border-green,.pager.border-green a,.pagination.border-green li,.pointer.border-green li,.selected.border-green{border-color:#2c7}
+.alert-red,.border-red-light,.border-red-light .button,.border-red-light .tab-body,.border-red-light .tab-nav li a,.button.bg-red-light,.nav-main.border-red-light .nav-head,.nav-main.border-red-light a,.nav.border-red-light .active a,.nav.nav-tabs.border-red-light,.pager.border-red-light a,.pagination.border-red-light li,.pointer.border-red-light li,.selected.border-red-light{border-color:#fee}
+.alert-yellow,.border-yellow-light,.border-yellow-light .button,.border-yellow-light .tab-body,.border-yellow-light .tab-nav li a,.button.bg-yellow-light,.nav-main.border-yellow-light .nav-head,.nav-main.border-yellow-light a,.nav.border-yellow-light .active a,.nav.nav-tabs.border-yellow-light,.pager.border-yellow-light a,.pagination.border-yellow-light li,.pointer.border-yellow-light li,.selected.border-yellow-light{border-color:#ffd}
+.alert-blue,.border-blue-light,.border-blue-light .button,.border-blue-light .tab-body,.border-blue-light .tab-nav li a,.button.bg-blue-light,.nav-main.border-blue-light .nav-head,.nav-main.border-blue-light a,.nav.border-blue-light .active a,.nav.nav-tabs.border-blue-light,.pager.border-blue-light a,.pagination.border-blue-light li,.pointer.border-blue-light li,.selected.border-blue-light{border-color:#eff}
+.alert-green,.border-green-light,.border-green-light .button,.border-green-light .tab-body,.border-green-light .tab-nav li a,.button.bg-green-light,.nav-main.border-green-light .nav-head,.nav-main.border-green-light a,.nav.border-green-light .active a,.nav.nav-tabs.border-green-light,.pager.border-green-light a,.pagination.border-green-light li,.pointer.border-green-light li,.selected.border-green-light{border-color:#efd}
+/*盒子*/
+.wBox{display:-webkit-box;display:-moz-box;display:box}
+.wBox-v{display:-webkit-box;display:-moz-box;display:box;-webkit-box-orient:vertical;-moz-box-orient:vertical;-box-orient:vertical}
+.wBox-1{-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;width:0}
+.wBox20{width:20px}
+.wBox30{width:30px}
+.wBox40{width:40px}
+.wBox50{width:50px}
+.wBox60{width:60px}
+.wBox70{width:70px}
+.wBox90{width:90px}
+/*图标字体*/
+@font-face{font-family:iconfont;src:url(//at.alicdn.com/t/font_1029724_a06955813bk.eot?t=1554274291311);src:url(//at.alicdn.com/t/font_1029724_a06955813bk.eot?t=1554274291311#iefix) format('embedded-opentype'),url('data:application/x-font-woff2;charset=utf-8;base64,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') format('woff2'),url(//at.alicdn.com/t/font_1029724_a06955813bk.woff?t=1554274291311) format('woff'),url(//at.alicdn.com/t/font_1029724_a06955813bk.ttf?t=1554274291311) format('truetype'),url(//at.alicdn.com/t/font_1029724_a06955813bk.svg?t=1554274291311#iconfont) format('svg')}
+.iconfont{font-family:iconfont!important;font-size:16px;font-style:normal;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.icon-jia:before{content:"\e600"}
+.icon-cha:before{content:"\e61a"}
+.icon-star:before{content:"\e61b"}
+.icon-shangyiye-copy:before{content:"\e614"}
+.icon-last-copy:before{content:"\e615"}
+.icon-dingwei1:before{content:"\e74b"}
+.icon-mima1:before{content:"\e603"}
+.icon-kaoqin1:before{content:"\e60f"}
+.icon-mima:before{content:"\e660"}
+.icon-shuju:before{content:"\e664"}
+.icon-zhanghao:before{content:"\e61e"}
+.icon-yonghu:before{content:"\e638"}
+.icon-shangchuan:before{content:"\e658"}
+.icon-gengduo:before{content:"\e63f"}
+.icon-tuichu:before{content:"\e673"}
+.icon-tag:before{content:"\e68a"}
+.icon-tubiao-:before{content:"\e654"}
+.icon-kaoqin:before{content:"\e67b"}
+.icon-jiancharenwufenpei:before{content:"\e622"}
+.icon-character-cancel:before{content:"\e62f"}
+.icon-web-icon-:before{content:"\e70c"}
+.icon-ziyuan:before{content:"\e61f"}
+.icon-wuliaoxianxing:before{content:"\e60b"}
+.icon-yuechi_o:before{content:"\eb6a"}
+.icon-kehu:before{content:"\e625"}
+.icon-chakan-copy:before{content:"\e62c"}
+.icon-qiandao:before{content:"\e7b7"}
+.icon-wuliaoguanli:before{content:"\e62b"}
+.icon-right-copy:before{content:"\e6eb"}
+.icon-cuowu:before{content:"\e653"}
+/*颜色*/
+.text-blue{color:#75ccfe}
+.text-yellow{color:#ffba6e}
+.text-green{color:#00aebc}
+.text-gray{color:#787878}
+.text-black{color:#000000}
+.text-red{color:#f03d56}
+.bg-white{background-color:#ffffff}
+/*--------自定义文本颜色--------*/
+/*文本-主色*/
+.text-main,
+a.text-main:link,
+a.text-main:visited,
+.button.border-main{
+	color:#6192e6;
+}
+/*文本-辅色*/
+.text-sub,
+a.text-sub:link,
+a.text-sub:visited,
+.button.border-sub{
+	color:#3f51b5;
+}
+/*文本-背景色*/
+.text-back,
+a.text-back:link,
+a.text-back:visited,
+.button.border-back{
+	color:#f3f3f5;
+}
+/*文本-融合色*/
+.text-mix,
+a.text-mix:link,
+a.text-mix:visited,
+.button.border-mix{
+	color:#ffffff;
+}
+/*文本-点缀色*/
+.text-dot,
+a.text-dot:link,
+a.text-dot:visited,
+.button.border-dot{
+	color:#f0b31f;
+}
+
+/*--------自定义背景色--------*/
+/*背景-主色*/
+.bg-main,
+.border-main .button.active{
+	background-color:#6192e6;
+}
+/*背景-辅色*/
+.bg-sub,
+.border-sub .button.active{
+	background-color:#3f51b5;
+}
+/*背景-背景色*/
+.bg-back,
+.border-back .button.active{
+	background-color:#f3f3f5;
+}
+/*背景-融合色*/
+.bg-mix,
+.border-mix .button.active{
+	background-color:#ffffff;
+}
+/*背景-点缀色*/
+.bg-dot,
+.border-dot .button.active{
+	background-color:#f0b31f;
+}
+
+/*--------自定义边框色--------*/
+/*边框-主色*/
+.border-main,
+.border-main .button,
+.border-main .tab-nav li a,
+.border-main .tab-body,
+.button.bg-main{
+	border-color: #6192e6;
+}
+/*边框-辅色*/
+.border-sub,
+.border-sub .button,
+.border-sub .tab-nav li a,
+.border-sub .tab-body,
+.button.bg-sub{
+	border-color:#3f51b5;
+}
+/*边框-背景色*/
+.border-back,
+.border-back .button,
+.border-back .tab-nav li a,
+.border-back .tab-body,
+.button.bg-back{
+	border-color:#f3f3f5;
+}
+/*边框-融合色*/
+.border-mix,
+.border-mix .button,
+.border-mix .tab-nav li a,
+.border-mix .tab-body,
+.button.bg-mix{
+	border-color:#ffffff;
+}
+/*边框-点缀色*/
+.border-dot,
+.border-dot .button,
+.border-dot .tab-nav li a,
+.border-dot .tab-body,
+.button.bg-dot{
+	border-color:#f0b31f;
+}
+/*共用样式*/
+page{font-size:28rpx;background-color:#fff}
+.ellipsis,.text-ellipsis{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.main{position:relative;display:block}
+.main-index{padding-bottom:120rpx}
+.footer{position:fixed;display:block;width:100%;height:120rpx;background-color:#f7f7f7;border-top:1px solid #e1e1e1;left:0;bottom:0;z-index:2}
+.footer .icon{display:block;height:60rpx;line-height:60rpx;text-align:center;font-size:40rpx;padding-top:10rpx}
+.footer .txt{display:block;height:50rpx;line-height:50rpx;font-size:24rpx;text-align:center}
+.bitian{position:absolute;display:block;width:8px;height:25px;line-height:25px;color:red;left:-8px;top:0}
+/*首页*/
+.index-k{padding-top:42px}
+.index-banner{position:relative;display:block;width:100%;height:200px}
+.index-banner .index-banner-img{display:block;width:100%}
+.index-search{position:fixed;display:block;height:30px;padding:5px 10px 7px 10px;left:0px;right:0px;top:0;z-index:2}
+.index-search>input{position:relative;display:block;width:100%;height:30px;line-height:35px;background-color:rgba(255,255,255,.9);border-radius:5px;text-align:center}
+.work-list{position:relative;display:block;padding:10px;border-bottom:1px solid #e1e1e1}
+.work-pic{position:relative;display:block;width:95px}
+.work-pic>image{display:block;width:100%;height:95px}
+.work-pic>text{position:relative;display:block;width:100%;line-height:20px;padding-top:6px}
+.work-txt{position:relative;display:block;line-height:15px;padding-top:5px;padding-bottom:5px;padding-left:15px}
+.work-txt:first-child{padding-top:2px;padding-bottom:7px}
+.work-footer{position:relative;display:block;width:100%}
+.work-footer .icon{display:block;height:60rpx;line-height:60rpx;text-align:center;font-size:60rpx;padding-top:10rpx}
+.work-footer .txt{display:block;height:50rpx;line-height:50rpx;text-align:center}
+/*登录*/
+.login-logo{position:relative;display:block;padding:50px 0}
+.login-logo>image{display:block;width:100px;height:100px;border-radius:100%;border:1px solid #eee;margin:0 auto}
+.login-int{position:relative;height:30px;line-height:30px;border-radius:40px;border:1px solid #ddd;padding:5px 5px}
+.login-int input{position:relative;display:block;width:100%;height:30px;line-height:30px}
+.login-int>.login-tips{position:absolute;display:block;height:15px;line-height:15px;padding:0 0;font-size:24rpx;color:#ccc;left:0;right:0;top:42px}
+.login-btn{padding:10px 15px;border:none;border-radius:40px;box-shadow:0 0 10px #6192e6}
+.bg-main-btn{padding:10px 15px;border:none;box-shadow:0 0 10px #6192e6}
+/*个人中心*/
+.home-avatar{position:relative;display:block;width:70px;height:70px}
+.home-avatar>image{display:block;width:100%;height:100%;border-radius:100%}
+/*促销*/
+.work-int{position:relative;display:block;border:1px solid #ddd;border-radius:4px;padding:10px}
+.work-int>textarea{display:block;width:100%;height:125px;line-height:25px}
+.work-upload{position:relative;display:block;width:100%}
+.work-upload>.work-upload-btn{position:relative;display:block;float:left;width:60px;height:60px;border:1px dashed #DDD;margin-top:10px;margin-right:10px}
+.work-upload>.work-upload-btn>text{display:block;width:60px;height:60px;line-height:60px;font-size:24px;color:#CCC;text-align:center}
+.work-upload>.work-upload-pic{position:relative;display:block;float:left;width:60px;height:60px;border:1px solid #eee;margin-top:10px;margin-right:10px}
+.work-upload>.work-upload-pic>image{display:block;width:100%;height:100%}
+.work-btn{padding:10px 15px;border:none;border-radius:40px;box-shadow:0 0 10px #6192e6}
+.work-btn2{padding:10px 15px;border:none;border-radius:40px;box-shadow:0 0 10px #999999}
+.work-cz{position:relative;display:block;width:60px;height:40px;line-height:40px;border-radius:100%;font-size:36px;text-align:center;color:#fff;margin:0 auto;padding:10px 0}
+.work-cz.cz1{box-shadow:0 0 10px #89c997;background-color:#89c997}
+.work-cz.cz2{box-shadow:0 0 10px #e3de99;background-color:#e3de99}
+.work-cz.cz3{box-shadow:0 0 10px #88abda;background-color:#88abda}
+.work-cz.cz4{box-shadow:0 0 10px #eb6877;background-color:#eb6877}
+.work-cz.cz5{box-shadow:0 0 10px #00aebc;background-color:#00aebc}
+.work-input{position:relative;display:block;min-height:25px;padding:10px}
+.work-input-bt{position:relative;display:block;width:100px;height:25px;line-height:25px;color:#444}
+.work-input-bt.long{width:150px}
+.work-input-bd{display:block;width:100%;height:25px;line-height:25px}
+.work-input-border{position:absolute;display:block;height:1px;background-color:#ddd;left:25px;right:-10px;bottom:0}
+.work-select-bd{display:block;width:100%;height:25px;line-height:25px}
+.work-picker{padding-right:20px}
+.work-picker>.down{position:absolute;display:block;width:20px;height:45px;line-height:45px;text-align:right;right:0;top:0}
+/*我的客户*/
+.customer-search{position:fixed;height:30px;padding:5px 10px 7px 10px;left:0px;right:0px;top:0;z-index:2}
+.customer-search input{position:relative;display:block;width:100%;height:30px;line-height:35px;background-color:rgba(255,255,255,.9);border-radius:5px;text-align:center}
+.chaBtn{display:block;width:25px;height:25px;line-height:25px;color:#999;text-align:center;padding:0;font-size:14px}
+.picker{line-height:25px}
+label.radio{height:24px;line-height:24px}
+/*促销执行查看*/
+.carryout-k{padding-top:90px}
+.carryout-k.s2{padding-top:48px}
+.carryout-k2{padding-top:132px}
+.carryout-k2.s2{padding-top:92px}
+.carryout-search{position:fixed;display:block;width:auto;height:auto;padding:7px 10px;background-color:#fff;left:0;right:0;top:42px;z-index:2}
+.carryout-search.s2{top:0}
+.carryout-role{position:fixed;display:block;width:auto;height:auto;padding:7px 10px;padding-top:0;background-color:#fff;left:0;right:0;top:90px;z-index:2}
+.carryout-role.s2{top:52px;}
+.carryout-picker{position:relative;display:block;height:26px;padding:4px 10px;color:#999;text-align:center;background-color:#f2f2f2;border-radius:4px}
+.work-details{position:relative;display:block;min-height:20px;line-height:20px;padding:10px}
+.work-details-bt{position:relative;display:block;width:100px;min-height:20px;line-height:20px;color:#444}
+.work-details-border{position:absolute;display:block;height:1px;background-color:#ddd;left:25px;right:-10px;bottom:0}
+.work-details-pic{position:relative;width:75px;height:75px;margin-right:5px;border:1px solid #eee}
+/*数据上报查看*/
+.report-switch{position:fixed;display:block;width:100%;height:42px;background-color:#fff;text-align:center;left:0;top:0;z-index:2}
+.report-switch text{display:inline-block;height:41px;line-height:42px;border-bottom:2px solid transparent}
+.report-switch text.cur{color:#6192e6;border-bottom:2px solid #6192e6}
+.work-tab{position:relative;display:block;width:100%;border:1px solid #ddd;color:#444;border-radius:10px;overflow:hidden}
+.work-th{position:relative;display:block;width:100%;line-height:20px;background-color:#ddd}
+.work-th text{display:block;padding:5px 10px}
+.work-td{position:relative;display:block;width:100%;line-height:20px;border-top:1px solid #ddd}
+.work-td text{display:block;padding:10px 10px}

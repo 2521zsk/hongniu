@@ -1,0 +1,63 @@
+<import src="../tpl/popup_tpl.wxml" />
+
+<!--pages/work/index.wxml-->
+<view class='main'>
+    <!--促销点信息-->
+    <view class='work-list'>
+        <view class='wBox'>
+            <view class='work-pic'>
+				<image wx:if='{{workData.StorePhoto == ""}}' src='../images/default.png'></image>
+				<image wx:else src='{{workData.StorePhoto}}'></image>
+            </view>
+            <view class='wBox-1'>
+                <view class='work-txt'>
+                    <text class='text-big'>{{workData.ActivityName}}</text>
+                </view>
+                <view class='work-txt'>
+                    <text>{{workData.storename}}</text>
+                </view>
+                <view class='work-txt'>
+                    <text>{{workData.contactname}}{{workData.contactphone}}</text>
+                </view>
+                <view class='work-txt'>
+                    <text>{{workData.address}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+	<!--操作区-->
+	<view class='clearfix margin-top'>
+		<view class='work-footer clearfix'>
+			<view wx:if="{{roleData[0] == 1 || roleData[0] == 3}}" class='x4 padding-top-bottom' bindtap='goSignin'>
+				<view class='work-cz cz1'>
+					<text class='icon iconfont icon-qiandao'></text>
+				</view>
+				<view class='txt'>促销签到</view>
+			</view>
+			<view wx:if="{{roleData[0] == 1}}" class='x4 padding-top-bottom' bindtap='goCarryout'>
+				<view class='work-cz cz2'>
+					<text class='icon iconfont icon-tag'></text>
+				</view>
+				<view class='txt'>促销执行</view>
+			</view>
+			<view wx:if="{{roleData[0] == 2 || roleData[0] == 3}}" class='x4 padding-top-bottom' bindtap='goCheckup'>
+				<view class='work-cz cz3'>
+					<text class='icon iconfont icon-jiancharenwufenpei'></text>
+				</view>
+				<view class='txt'>促销检查</view>
+			</view>
+			<view class='x4 padding-top-bottom' bindtap='goUpload'>
+				<view class='work-cz cz4'>
+					<text class='icon iconfont icon-shangchuan'></text>
+				</view>
+				<view class='txt'>数据上传</view>
+			</view>
+			<view wx:if="{{roleData[0] == 1 || roleData[0] == 3}}" class='x4 padding-top-bottom' bindtap='goSignout'>
+				<view class='work-cz cz5'>
+					<text class='icon iconfont icon-character-cancel'></text>
+				</view>
+				<view class='txt'>促销签退</view>
+			</view>
+		</view>
+	</view>
+</view>

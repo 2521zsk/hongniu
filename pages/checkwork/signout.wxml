@@ -1,0 +1,31 @@
+<import src="../tpl/popup_tpl.wxml" />
+
+<!--pages/checkwork/signout.wxml-->
+<view class='main'>
+	<!--表单-->
+	<form bindsubmit="formSubmit" class='clearfix padding'>
+		<input type='text' value='{{usernumber}}' name='UserNumber' class='hidden' />
+		<input type='text' value='{{thisLocation}}' name='SignLocation' class='hidden' />
+		<input type='text' value='2' name='SignType' class='hidden' />
+		<view class='work-int margin-bottom'>
+			<textarea value='' name='SignRemark' placeholder="说点什么吧" />
+			<view class='work-upload clearfix'>
+				<block wx:for="{{picArr1}}">
+					<view class='work-upload-pic' bindlongtap='picDelete1' data-num='{{item.num}}'>
+						<image src='{{item.src}}' mode='aspectFill'></image>
+					</view>
+				</block>
+				<view class='work-upload-btn' bindtap='picUpload1'>
+					<text class='iconfont icon-jia'></text>
+				</view>
+			</view>
+		</view>
+		<view class='clearfix margin-bottom'>
+			<text class='text-red iconfont icon-dingwei1'></text>
+			<text class='margin-small-left'>{{thisLocation}}</text>
+		</view>
+		<view class='clearfix padding-top-bottom'>
+			<button form-type="submit" class='button button-block bg-main work-btn'>提 交</button>
+		</view>
+	</form>
+</view>

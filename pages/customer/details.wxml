@@ -1,0 +1,144 @@
+<import src="../tpl/popup_tpl.wxml" />
+
+<!--pages/customer/details.wxml-->
+<view class='main'>
+	<view class='clearfix padding-large-bottom'>
+		<view class='work-details'>
+			<view class='wBox'>
+				<view class='work-details-bt'>门店名称</view>
+				<view class='wBox-1'>
+					<text>{{cData.storename}}</text>
+				</view>
+			</view>
+			<view class='work-details-border'></view>
+		</view>
+		<view class='work-details'>
+			<view class='wBox'>
+				<view class='work-details-bt'>联系人</view>
+				<view class='wBox-1'>
+					<text>{{cData.contactname}}</text>
+				</view>
+			</view>
+			<view class='work-details-border'></view>
+		</view>
+		<view class='work-details'>
+			<view class='wBox'>
+				<view class='work-details-bt'>联系电话</view>
+				<view class='wBox-1'>
+					<text>{{cData.contactphone}}</text>
+				</view>
+			</view>
+			<view class='work-details-border'></view>
+		</view>
+		<view class='work-details'>
+			<view class='wBox'>
+				<view class='work-details-bt'>客户类型</view>
+				<view class='wBox-1'>
+					<text>{{cData.storetypename }}</text>
+				</view>
+			</view>
+			<view class='work-details-border'></view>
+		</view>
+		<view class='work-details'>
+			<view class='wBox'>
+				<view class='work-details-bt'>渠道细分</view>
+				<view class='wBox-1'>
+					<text>{{cData.Col15Name}}</text>
+				</view>
+			</view>
+			<view class='work-details-border'></view>
+		</view>
+		<view class='work-details'>
+			<view class='wBox'>
+				<view class='work-details-bt'>客户等级</view>
+				<view class='wBox-1'>
+					<text>{{cData.StoreRankName}}</text>
+				</view>
+			</view>
+			<view class='work-details-border'></view>
+		</view>
+		<view class='work-details'>
+			<view class='wBox'>
+				<view class='work-details-bt'>热点区域</view>
+				<view class='wBox-1'>
+					<text>{{cData.HotZoneName}}</text>
+				</view>
+			</view>
+			<view class='work-details-border'></view>
+		</view>
+		<view class='work-details'>
+			<view class='wBox'>
+				<view class='work-details-bt'>协议分类</view>
+				<view class='wBox-1'>
+					<text>{{cData.Col22Name}}</text>
+				</view>
+			</view>
+			<view class='work-details-border'></view>
+		</view>
+		<view class='work-details'>
+			<view class='wBox'>
+				<view class='work-details-bt'>区县</view>
+				<view class='wBox-1'>
+					<text>{{cData.Col14Name}}</text>
+				</view>
+			</view>
+			<view class='work-details-border'></view>
+		</view>
+		<block wx:if='{{cData.Type == 1}}'>
+			<view class='work-details'>
+				<view class='wBox'>
+					<view class='work-details-bt'>红牛供应商</view>
+					<view class='wBox-1'>
+						<text>{{cData.distributorredname}}</text>
+					</view>
+				</view>
+				<view class='work-details-border'></view>
+			</view>
+			<view class='work-details'>
+				<view class='wBox'>
+					<view class='work-details-bt'>VC供应商</view>
+					<view class='wBox-1'>
+						<text>{{cData.distributorvitaname}}</text>
+					</view>
+				</view>
+				<view class='work-details-border'></view>
+			</view>
+			<view class='work-details'>
+				<view class='wBox'>
+					<view class='work-details-bt'>果粒爽供应商</view>
+					<view class='wBox-1'>
+						<text>{{cData.distributorguolishuangname}}</text>
+					</view>
+				</view>
+				<view class='work-details-border'></view>
+			</view>
+			<view class='work-details'>
+				<view class='wBox'>
+					<view class='work-details-bt'>芙丝供应商</view>
+					<view class='wBox-1'>
+						<text>{{cData.distributorvossname}}</text>
+					</view>
+				</view>
+				<view class='work-details-border'></view>
+			</view>
+			<view class='work-details'>
+				<view class='wBox'>
+					<view class='work-details-bt'>战马供应商</view>
+					<view class='wBox-1'>
+						<text>{{cData.distributorzhanmaname}}</text>
+					</view>
+				</view>
+				<view class='work-details-border'></view>
+			</view>
+		</block>
+		<view class='work-details'>
+			<view class='wBox'>
+				<view class='work-details-bt'>地址</view>
+				<view class='wBox-1'>
+					<text>{{cData.Address}}</text>
+				</view>
+			</view>
+			<view class='work-details-border'></view>
+		</view>
+	</view>
+</view>

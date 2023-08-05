@@ -1,0 +1,143 @@
+page {
+  display: block;
+  min-height: 100%;
+  background-color: white;
+}
+
+.edit {
+  border: 1rpx dashed lightgray;
+}
+
+.editproduct {
+  background-color: white;
+}
+ 
+.productname {
+  min-height: 80rpx;
+  margin-top:20rpx;
+  margin-left: 30rpx;
+  font-size: 30rpx;
+}
+
+.editpicker1 {
+  margin-top: 40rpx;
+  font-size: 25rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.editpicker2 {
+  margin-top: 40rpx;
+  font-size: 25rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.inputsaletype {
+  margin-right: 30rpx;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  border: 1rpx gray solid;
+  height: 60rpx;
+  width: 300rpx;
+  line-height: 60rpx;
+  background-color: rgb(213, 221, 231);
+  color: gray;
+}
+
+.inputsaletype image {
+  margin-top: 12px;
+  margin-right: 3px;
+  height: 8px;
+  width: 10px;
+}
+
+.inputsaletype input {
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.inputimg {
+  margin-right: 30rpx;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  border: 1rpx gray solid;
+  height: 60rpx;
+  width: 300rpx;
+  line-height: 60rpx;
+}
+
+.inputimg image {
+  margin-top: 12px;
+  margin-right: 3px;
+  height: 8px;
+  width: 10px;
+}
+
+.inputimg input {
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.editpicker1 input {
+  text-align: center;
+}
+
+.editpicker1 label {
+  margin-left: 60rpx;
+}
+
+.v-label {
+  /* width: 300rpx; */
+  margin-right: 30rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.v-label label {
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-bottom: 30rpx;
+}
+
+.v-input {
+  width: 300rpx;
+  margin-right: 30rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border: 1rpx gray solid;
+}
+
+.v-input input {
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-bottom: 30rpx;
+}
+
+.editpicker2 input {
+  margin-right: 30rpx;
+  text-align: center;
+}
+
+.editpicker2 label {
+  margin-left: 60rpx;
+}
+
+.notice {
+  font-size: 25rpx;
+  color: gray;
+  margin-top: 30rpx;
+  text-align: center;
+  width: 100%;
+}
+
+.addtocar {
+  width: 90%;
+  margin-left: 5%;
+ bottom: 10px;
+ position: absolute;
+}

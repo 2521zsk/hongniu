@@ -1,0 +1,87 @@
+<import src="../tpl/popup_tpl.wxml" />
+
+<!--pages/dataupload/index.wxml-->
+<view class='main'>
+	<!--表单-->
+	<form bindsubmit="formSubmit" class='clearfix padding'>
+        <input type='text' value='{{ActivityID}}' name='ActivityID' class='hidden' />
+        <input type='text' value='{{Guid}}' name='Guid' class='hidden' />
+        <input type='text' value='{{usernumber}}' name='UserNumber' class='hidden' />
+		<!--基本信息-->
+		<view class='clearfix margin-bottom'>
+			<view class='height-big padding-left-right'>
+				<text class='text-big'>基本信息</text>
+			</view>
+			<view class='work-input'>
+				<view class='wBox'>
+					<view class='work-input-bt long'><text class='bitian'>*</text>终端覆盖网点数（个）</view>
+					<view class='wBox-1'>
+						<input type='number' name='CoverStoreNumber' placeholder='请输入终端覆盖网点数（个）' class='work-input-bd' />
+					</view>
+				</view>
+				<view class='work-input-border'></view>
+			</view>
+			<view class='work-input'>
+				<view class='wBox'>
+					<view class='work-input-bt long'><text class='bitian'>*</text>现场覆盖人数（人）</view>
+					<view class='wBox-1'>
+						<input type='number' name='ScenePeopleNumber' placeholder='请输入现场覆盖人数（人）' class='work-input-bd' />
+					</view>
+				</view>
+				<view class='work-input-border'></view>
+			</view>
+			<view class='work-input'>
+				<view class='wBox'>
+					<view class='work-input-bt long'><text class='bitian'>*</text>影响人数（人）</view>
+					<view class='wBox-1'>
+						<input type='number' name='MarketingNumber' placeholder='请输入影响人数（人）' class='work-input-bd' />
+					</view>
+				</view>
+				<view class='work-input-border'></view>
+			</view>
+			<view class='work-input'>
+				<view class='wBox'>
+					<view class='work-input-bt long'><text class='bitian'>*</text>壹元乐享（个）</view>
+					<view class='wBox-1'>
+						<input type='number' name='HappyNumber' placeholder='请输入壹元乐享（个）' class='work-input-bd' />
+					</view>
+				</view>
+				<view class='work-input-border'></view>
+			</view>
+		</view>
+		<!--礼品使用登记-->
+		<view class='clearfix margin-bottom'>
+			<view class='height-big padding-left-right'>
+				<text class='text-big'>礼品使用登记</text>
+			</view>
+			<block wx:for='{{awardArr}}'>
+				<view class='work-input'>
+					<view class='wBox'>
+						<view class='work-input-bt long'><text class='bitian'>*</text>礼品{{index + 1}}</view>
+						<view class='wBox-1'>
+							<view class='wBox'>
+								<view class='wBox-1 border-right'>
+									<input data-num='{{index}}' bindinput='productNameEvent' type='text' placeholder='礼品名称' class='work-input-bd' />
+								</view>
+								<view class='wBox-1 padding-left'>
+									<input data-num='{{index}}' bindinput='productNumberEvent' type='number' placeholder='数量' class='work-input-bd text-center' />
+								</view>
+								<view class='padding-left text-center'>
+									<button bindtap='delPrize' wx:if='{{index == 0}}' data-inx='{{index}}' data-disabled='true' disabled='true' class='chaBtn'><text class='iconfont icon-cha'></text></button>
+									<button bindtap='delPrize' wx:else data-inx='{{index}}'  data-disabled='false' class='chaBtn'><text class='iconfont icon-cha'></text></button>
+								</view>
+							</view>
+						</view>
+					</view>
+					<view class='work-input-border'></view>
+				</view>
+			</block>
+			<view class='clearfix text-center margin-top'>
+				<button bindtap='addPrize' class='button button-small border-dot'>添加礼品项</button>
+			</view>
+		</view>
+		<view class='clearfix padding-top-bottom'>
+			<button form-type="submit" class='button button-block bg-main work-btn'>下一步</button>
+		</view>
+	</form>
+</view>

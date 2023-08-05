@@ -1,0 +1,29 @@
+<image src='../images/appimg/bg.jpg' class="bd"></image>
+<view class="container">
+<view class="logo">
+<image src="../images/appimg/logo1.png" class="im1"></image>
+<image src="../images/appimg/log2.png" class="im2"></image>
+</view>
+  <view class="doc-main" wx:if="{{progress>0}}" style="margin-top:180rpx;width:80%;margin-left:10%;">
+  <view class="progress progress-xs active ">
+    <view class="progress-bar progress-bar-secondary-zidingyi" style="width: {{progress}}%"></view>
+  </view>
+  <view style='text-align:center;margin-top:25rpx;color:white;'>数据加载中({{progress}}%)...</view>
+</view>
+</view>
+  <!-- 中间弹出框 -->
+  <zan-popup
+    show="{{ showPopup }}"
+    bindclose="togglePopup"
+  >
+    <view class="listpage">
+    <view class='title'>
+    <label> 选择岗位</label>
+    </view>
+    <scroll-view scroll-y class="list">
+       <view class="listbody" wx:for="{{rolelist}}" wx:key="">
+       <view class="btns" bindtap="choose" data-index="{{index}}">{{item}}</view>
+        </view>
+        </scroll-view>
+    </view>
+  </zan-popup>

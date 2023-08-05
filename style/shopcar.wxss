@@ -1,0 +1,306 @@
+page {
+  display: block;
+  min-height: 100%;
+  background: white;
+}
+
+.sample_title {
+  width: 100%;
+  height: 40px;
+  border-bottom: 1rpx dashed lightgray;
+}
+.nothing .selectbtn{
+color: RGBA(47, 108, 226, 1);
+border: 1px solid RGBA(47, 108, 226, 1);
+}
+.nothing {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 35rpx;
+  color: gray;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  padding-top: 35%;
+}
+.nothing image{
+height: 170rpx;
+width: 170rpx;
+margin-left: 280rpx;
+}
+.nothing text {
+  margin-top: 43rpx;
+  color:RGBA(140, 140, 140, 1);
+  margin-bottom: 60rpx;
+}
+
+.activity {
+  margin-top: 10rpx;
+  background-color: white;
+  border: 1rpx lightgray solid;
+}
+
+.actbg {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-size: cover;
+}
+
+.actname {
+  color: #e11d21;
+  position: absolute;
+}
+
+.product {
+  height: 150rpx;
+}
+
+.product image {
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+  margin-top: 25rpx;
+  margin-bottom: 25rpx;
+  height: 100rpx;
+  width: 20%;
+}
+
+.productnametype {
+  height: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.text1 {
+  width: 70%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text2 {
+  text-align: center;
+  width: 20%;
+  line-height: 20px;
+  font-size: 22rpx;
+  background-color: #f52c1ebb;
+  height: 20px;
+  border-radius: 6rpx;
+}
+
+.productdetail {
+  width: 60%;
+  font-size: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  border: 1rpx solid gray;
+}
+
+.del {
+  text-align: center;
+  background-color: red;
+  color: white;
+  width: 20%;
+  height: 150rpx;
+  line-height: 150rpx;
+  border: 1rpx solid gray;
+}
+
+.saledetail {
+   width: 100%;
+  font-size: 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.imgs {
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+  margin-top: 25rpx;
+  margin-bottom: 25rpx;
+  height: 100rpx;
+  width: 100rpx;
+}
+
+.dome_operate {
+  background: #3ecbe8;
+}
+
+.delete {
+  width: 80px;
+  text-align: center;
+  line-height: 80px;
+  font-size: 14px;
+  color: #fff;
+  background: #f22;
+}
+
+.dome2_operate {
+  background: #eee;
+}
+
+.iconbox {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  box-shadow: #ccc 0px 0px 14px;
+}
+
+.top_tip {
+  background-color: #fff;
+}
+
+.top_tip .left_icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fcb300;
+  text-align: center;
+  line-height: 50px;
+}
+
+.top_tip .text text {
+  font-size: 16px;
+  color: #313338;
+}
+
+.top_tip .text view {
+  color: #9c9fa4;
+  font-size: 12px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.tel_list {
+  background-color: #fff;
+}
+
+.tel_list .name {
+  color: #0b0b0b;
+  font-size: 16px;
+}
+
+.tel_list .address {
+  color: #101010;
+  font-size: 12px;
+}
+
+.tel_list .time {
+  color: #afafaf;
+  font-size: 12px;
+}
+
+.swipe-out-dome-3 {
+  background-color: #eee;
+}
+
+.swipe-out-dome-3 .swipe-out-wrap {
+  margin-top: 5px;
+}
+
+.collect {
+  padding-top: 5px;
+  background-color: #fff;
+}
+
+.collect .name {
+  color: #787878;
+  font-size: 14px;
+}
+
+.collect .time {
+  font-size: 12px;
+  color: #787878;
+}
+
+.collect .content {
+  font-size: 16px;
+  color: #141414;
+}
+
+.footer {
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.amount {
+  height: 50px;
+  line-height: 50px;
+  padding-left: 25rpx;
+  text-align: left;
+  width: 48%;
+  border: 1rpx solid lightgray;
+  background-color: white;
+  font-size: 30rpx;
+}
+
+.addbutton {
+  height: 50px;
+  line-height: 50px;
+  width: 26%;
+  background-color: #1aad19;
+  text-align: center;
+  color: white;
+}
+
+
+.confirmbtn {
+  text-align: center;
+  color: white;
+  height: 50px;
+  line-height: 50px;
+  width: 26%;
+  background-color: #f3b007;
+}
+
+.gift {
+  border: 1rpx solid lightgray;
+  background-color: rgba(249, 250, 254, 1);
+  display: flex;
+  flex-direction: row;
+  height: 130rpx;
+}
+
+.giftheader {
+  width: 80rpx;
+  height: 40rpx;
+  text-align: center;
+  background-color: #f45959;
+  color: white;
+  margin-left: 20rpx;
+  margin-top: 45rpx;
+}
+
+.giftdetail {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+}
+
+.giftdetail image {
+  margin-left: 25rpx;
+  margin-right: 25rpx;
+  height: 80rpx;
+  width: 80rpx;
+  margin-top: 25rpx;
+}
+
+.gifttext {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}

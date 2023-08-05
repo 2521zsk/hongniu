@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "zan-popup": "../../components/popup/index"
+  },
+  "navigationBarTitleText": "岗位选择",
+  "disableScroll": true
+}

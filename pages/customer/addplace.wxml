@@ -1,0 +1,97 @@
+<import src="../tpl/popup_tpl.wxml" />
+
+<!--pages/customer/addplace.wxml-->
+<view class='main'>
+	<!--表单-->
+	<form bindsubmit="formSubmit" class='clearfix padding-left-right'>
+		<input type='text' value='{{usernumber}}' name='UserNumber' class='hidden' />
+		<input type='text' value='{{location}}' name='Location' class='hidden' />
+		<view class='work-input'>
+			<view class='wBox'>
+				<view class='work-input-bt'><text class='bitian'>*</text>场所名称</view>
+				<view class='wBox-1'>
+					<input type='text' name='StoreName' placeholder='请输入场所名称' class='work-input-bd' />
+				</view>
+			</view>
+			<view class='work-input-border'></view>
+		</view>
+		<view class='work-input'>
+			<view class='wBox'>
+				<view class='work-input-bt'>地址</view>
+				<view class='wBox-1'>
+					<input type='text' value='{{thisLocation}}' name='Address' bindblur='AddressChange' placeholder='请输入地址' class='work-input-bd' />
+				</view>
+			</view>
+			<view class='work-input-border'></view>
+		</view>
+		<view class='work-input'>
+			<view class='wBox'>
+				<view class='work-input-bt'>联系人</view>
+				<view class='wBox-1'>
+					<input type='text' name='Contacts' placeholder='请输入联系人' class='work-input-bd' />
+				</view>
+			</view>
+			<view class='work-input-border'></view>
+		</view>
+		<view class='work-input'>
+			<view class='wBox'>
+				<view class='work-input-bt'>联系电话</view>
+				<view class='wBox-1'>
+					<input type='number' name='Tel' maxlength='11' placeholder='请输入联系电话' class='work-input-bd' />
+				</view>
+			</view>
+			<view class='work-input-border'></view>
+		</view>
+		<view class='work-input work-picker'>
+			<view class='wBox'>
+				<view class='work-input-bt'>场所类型</view>
+				<view class='wBox-1'>
+					<picker name="StoreTypeID" bindchange="StoreTypeChange" value="{{StoreTypeInx}}" range="{{StoreTypeArr}}" range-key="DicVal">
+						<view class="picker">{{StoreTypeArr[StoreTypeInx].DicVal}}</view>
+					</picker>
+				</view>
+			</view>
+			<view class='down iconfont icon-tubiao-'></view>
+			<view class='work-input-border'></view>
+		</view>
+		<view class='work-input work-picker'>
+			<view class='wBox'>
+				<view class='work-input-bt'>渠道细分</view>
+				<view class='wBox-1'>
+					<picker name="StoreTypeDetailID" bindchange="StoreTypeDetailChange" value="{{StoreTypeDetailInx}}" range="{{StoreTypeDetailArr}}" range-key="DicVal">
+						<view class="picker">{{StoreTypeDetailArr[StoreTypeDetailInx].DicVal}}</view>
+					</picker>
+				</view>
+			</view>
+			<view class='down iconfont icon-tubiao-'></view>
+			<view class='work-input-border'></view>
+		</view>
+		<view class='work-input work-picker'>
+			<view class='wBox'>
+				<view class='work-input-bt'>热点区域</view>
+				<view class='wBox-1'>
+					<picker name="HotspotID" bindchange="HotspotChange" value="{{HotspotInx}}" range="{{HotspotArr}}" range-key="DicVal">
+						<view class="picker">{{HotspotArr[HotspotInx].DicVal}}</view>
+					</picker>
+				</view>
+			</view>
+			<view class='down iconfont icon-tubiao-'></view>
+			<view class='work-input-border'></view>
+		</view>
+		<view class='work-input work-picker'>
+			<view class='wBox'>
+				<view class='work-input-bt'>区县</view>
+				<view class='wBox-1'>
+					<picker name="DistrictID" bindchange="DistrictChange" value="{{DistrictInx}}" range="{{DistrictArr}}" range-key="SaleAreaName">
+						<view class="picker">{{DistrictArr[DistrictInx].SaleAreaName}}</view>
+					</picker>
+				</view>
+			</view>
+			<view class='down iconfont icon-tubiao-'></view>
+			<view class='work-input-border'></view>
+		</view>
+		<view class='clearfix padding-big-top-bottom'>
+			<button form-type="submit" class='button button-block bg-main work-btn'>提 交</button>
+		</view>
+	</form>
+</view>

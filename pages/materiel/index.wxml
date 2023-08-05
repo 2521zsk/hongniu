@@ -1,0 +1,74 @@
+<import src="../tpl/popup_tpl.wxml" />
+
+<!--pages/materiel/index.wxml-->
+<view class='main'>
+	<!--搜索框-->
+	<form class='clearfix'>
+		<view class='customer-search wBox bg-main'>
+			<view class='wBox-1'>
+				<input type="text" confirm-type="search" bindconfirm="searchSubmit" placeholder="请输入物料名称搜索" />
+			</view>
+			<view class='padding-left'>
+				<button bindtap='addMateriel' class='button button-small bg-red'>新增物料</button>
+			</view>
+		</view>
+		<view class='carryout-search'>
+			<view class='wBox'>
+				<view class='wBox-1 padding-right'>
+					<picker mode="date" value="{{StartDate}}" start="{{S_Start}}" end="{{S_End}}" bindchange="StartDateChange">
+						<view class="picker carryout-picker">{{StartDate}}</view>
+					</picker>
+				</view>
+				<view class='wBox-1 padding-right'>
+					<picker mode="date" value="{{EndDate}}" start="{{E_Start}}" end="{{E_End}}" bindchange="EndDateChange">
+						<view class="picker carryout-picker">{{EndDate}}</view>
+					</picker>
+				</view>
+				<view class='wBox90'>
+					<button bindtap='clearDate' class='button button-block bg-main'>清空时间</button>
+				</view>
+			</view>
+		</view>
+	</form>
+	<!--数据列表-->
+	<view class='clearfix carryout-k'>
+		<view class='clearfix'>
+			<view wx:if="{{cData.length > 0}}">
+				<block wx:for="{{cData}}">
+					<view class='clearfix padding border-bottom'>
+						<view class='height-big'>
+							<text class='text-big'>{{item.materielname}}</text>
+						</view>
+						<view class='clearfix height-small text-small'>
+							<view class='x6'>
+								<text>合同数量：{{item.contractnumber}}</text>
+							</view>
+							<view class='x6'>
+								<text>物料类型：{{item.materieltype}}</text>
+							</view>
+							<view class='x6'>
+								<text>验收数量：{{item.checknumber}}</text>
+							</view>
+							<view class='x6'>
+								<text>物料材质：{{item.materieltexture}}</text>
+							</view>
+							<view class='x12'>
+								<text>验收情况：{{item.checksituation}}</text>
+							</view>
+							<view class='x12'>
+								<text>验收时间：{{item.checkdate}}</text>
+							</view>
+							<view class='x12'>
+								<text>验收经办：{{item.checkname}}</text>
+							</view>
+						</view>
+					</view>
+				</block>
+			</view>
+			<view class='text-center padding-big text-gray height-big' wx:else>暂无此类物料~</view>
+		</view>
+		<!--view class='clearfix height-small padding text-center'>
+			<text class='clearfix'>加载更多<text class='iconfont icon-gengduo'></text></text>
+		</view-->
+	</view>
+</view>

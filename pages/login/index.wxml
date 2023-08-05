@@ -1,0 +1,25 @@
+<import src="../tpl/popup_tpl.wxml" />
+
+<!--pages/login/index.wxml-->
+<view class='main'>
+	<!--logo-->
+	<view class='login-logo'>
+		<image src='../images/logo.png'></image>
+	</view>
+	<!--表单-->
+	<form class='clearfix padding-large-left-right'>
+		<view class='login-int wBox margin-bottom'>
+			<view class='wBox30 text-center'><text class='iconfont icon-zhanghao'></text></view>
+			<input type='text' name='username' bindinput='mobileInputEvent' placeholder='请输入您的账号' />
+			<text class='login-tips'></text>
+		</view>
+		<view class='login-int wBox margin-bottom'>
+			<view class='wBox30 text-center'><text class='iconfont icon-mima'></text></view>
+			<input type='text' name='password' bindinput='passwordInputEvent' password="true" placeholder='请输入您的密码' />
+			<text class='login-tips'></text>
+		</view>
+		<view class='clearfix padding-top'>
+			<button bindtap='loginSubmit' class='button button-block bg-main login-btn'>登 录</button>
+		</view>
+	</form>
+</view>

@@ -1,0 +1,196 @@
+<import src="../tpl/popup_tpl.wxml" />
+
+<!--pages/customer/addstore.wxml-->
+<view class='main'>
+	<!--表单-->
+	<form bindsubmit="formSubmit" class='clearfix padding-left-right'>
+		<input type='text' value='{{usernumber}}' name='UserNumber' class='hidden' />
+		<input type='text' value='{{location}}' name='Location' class='hidden' />
+		<input type='text' value='' name='StoreShortName' class='hidden' />
+		<input type='text' value='' name='StoreCode' class='hidden' />
+		<input type='text' value='' name='SaleAreaID' class='hidden' />
+		<input type='text' value='' name='PostCode' class='hidden' />
+		<input type='text' value='' name='StatusName' class='hidden' />
+		<input type='text' value='' name='ext_21' class='hidden' />
+		<input type='text' value='' name='Col13' class='hidden' />
+		<input type='text' value='' name='StoreLine' class='hidden' />
+		<input type='text' value='' name='ext_30' class='hidden' />
+		<input type='text' value='' name='Col1' class='hidden' />
+		<input type='text' value='' name='regionTypeId' class='hidden' />
+		<input type='text' value='' name='provinceid' class='hidden' />
+		<input type='text' value='' name='cityid' class='hidden' />
+		<input type='text' value='' name='districtid' class='hidden' />
+		<input type='text' value='' name='street' class='hidden' />
+		<view class='work-input'>
+			<view class='wBox'>
+				<view class='work-input-bt'><text class='bitian'>*</text>门店名称</view>
+				<view class='wBox-1'>
+					<input type='text' name='StoreName' placeholder='请输入门店名称' class='work-input-bd' />
+				</view>
+			</view>
+			<view class='work-input-border'></view>
+		</view>
+		<view class='work-input'>
+			<view class='wBox'>
+				<view class='work-input-bt'>地址</view>
+				<view class='wBox-1'>
+					<input type='text' value='{{thisLocation}}' name='Address' bindblur='AddressChange' placeholder='请输入地址' class='work-input-bd' />
+				</view>
+			</view>
+			<view class='work-input-border'></view>
+		</view>
+		<view class='work-input work-picker'>
+			<view class='wBox'>
+				<view class='work-input-bt'>客户类型</view>
+				<view class='wBox-1'>
+					<picker name="StoreType" bindchange="StoreTypeChange" value="{{StoreTypeInx}}" range="{{StoreTypeArr}}" range-key="DicVal">
+						<view class="picker">{{StoreTypeArr[StoreTypeInx].dicvalue}}</view>
+					</picker>
+				</view>
+			</view>
+			<view class='down iconfont icon-tubiao-'></view>
+			<view class='work-input-border'></view>
+		</view>
+		<view class='work-input work-picker'>
+			<view class='wBox'>
+				<view class='work-input-bt'>渠道细分</view>
+				<view class='wBox-1'>
+					<picker name="ChannelID" bindchange="ChannelChange" value="{{ChannelInx}}" range="{{ChannelArr}}" range-key="DicVal">
+						<view class="picker">{{ChannelArr[ChannelInx].dicvalue}}</view>
+					</picker>
+				</view>
+			</view>
+			<view class='down iconfont icon-tubiao-'></view>
+			<view class='work-input-border'></view>
+		</view>
+		<view class='work-input work-picker'>
+			<view class='wBox'>
+				<view class='work-input-bt'>客户等级</view>
+				<view class='wBox-1'>
+					<picker name="GradeID" bindchange="GradeChange" value="{{GradeInx}}" range="{{GradeArr}}" range-key="DicVal">
+						<view class="picker">{{GradeArr[GradeInx].dicvalue}}</view>
+					</picker>
+				</view>
+			</view>
+			<view class='down iconfont icon-tubiao-'></view>
+			<view class='work-input-border'></view>
+		</view>
+		<view class='work-input work-picker'>
+			<view class='wBox'>
+				<view class='work-input-bt'>热点区域</view>
+				<view class='wBox-1'>
+					<picker name="HotspotID" bindchange="HotspotChange" value="{{HotspotInx}}" range="{{HotspotArr}}" range-key="DicVal">
+						<view class="picker">{{HotspotArr[HotspotInx].dicvalue}}</view>
+					</picker>
+				</view>
+			</view>
+			<view class='down iconfont icon-tubiao-'></view>
+			<view class='work-input-border'></view>
+		</view>
+		<view class='work-input work-picker'>
+			<view class='wBox'>
+				<view class='work-input-bt'>协议分类</view>
+				<view class='wBox-1'>
+					<picker name="AgreeID" bindchange="AgreeChange" value="{{AgreeInx}}" range="{{AgreeArr}}" range-key="DicVal">
+						<view class="picker">{{AgreeArr[AgreeInx].dicvalue}}</view>
+					</picker>
+				</view>
+			</view>
+			<view class='down iconfont icon-tubiao-'></view>
+			<view class='work-input-border'></view>
+		</view>
+		<view class='work-input work-picker'>
+			<view class='wBox'>
+				<view class='work-input-bt'>区县</view>
+				<view class='wBox-1'>
+					<picker name="DistrictID" bindchange="DistrictChange" value="{{DistrictInx}}" range="{{DistrictArr}}" range-key="SaleAreaName">
+						<view class="picker">{{DistrictArr[DistrictInx].SaleAreaName}}</view>
+					</picker>
+				</view>
+			</view>
+			<view class='down iconfont icon-tubiao-'></view>
+			<view class='work-input-border'></view>
+		</view>
+		<view class='work-input work-picker'>
+			<view class='wBox'>
+				<view class='work-input-bt'>红牛供应商</view>
+				<view class='wBox-1'>
+					<picker name="SupplierID0" bindchange="SupplierChange0" value="{{SupplierInx0}}" range="{{SupplierArr0}}" range-key="distributorname">
+						<view class="picker">{{SupplierArr0[SupplierInx0].distributorname}}</view>
+					</picker>
+				</view>
+			</view>
+			<view class='down iconfont icon-tubiao-'></view>
+			<view class='work-input-border'></view>
+		</view>
+		<!-- <view class='work-input work-picker'>
+			<view class='wBox'>
+				<view class='work-input-bt'>果倍爽供应商</view>
+				<view class='wBox-1'>
+					<picker name="SupplierID1" bindchange="SupplierChange1" value="{{SupplierInx1}}" range="{{SupplierArr1}}" range-key="distributorname">
+						<view class="picker">{{SupplierArr1[SupplierInx1].distributorname}}</view>
+					</picker>
+				</view>
+			</view>
+			<view class='down iconfont icon-tubiao-'></view>
+			<view class='work-input-border'></view>
+		</view>
+		<view class='work-input work-picker'>
+			<view class='wBox'>
+				<view class='work-input-bt'>VC供应商</view>
+				<view class='wBox-1'>
+					<picker name="SupplierID2" bindchange="SupplierChange2" value="{{SupplierInx2}}" range="{{SupplierArr2}}" range-key="distributorname">
+						<view class="picker">{{SupplierArr2[SupplierInx2].distributorname}}</view>
+					</picker>
+				</view>
+			</view>
+			<view class='down iconfont icon-tubiao-'></view>
+			<view class='work-input-border'></view>
+		</view>
+		<view class='work-input work-picker'>
+			<view class='wBox'>
+				<view class='work-input-bt'>芙丝供应商</view>
+				<view class='wBox-1'>
+					<picker name="SupplierID3" bindchange="SupplierChange3" value="{{SupplierInx3}}" range="{{SupplierArr3}}" range-key="distributorname">
+						<view class="picker">{{SupplierArr3[SupplierInx3].distributorname}}</view>
+					</picker>
+				</view>
+			</view>
+			<view class='down iconfont icon-tubiao-'></view>
+			<view class='work-input-border'></view>
+		</view>
+		<view class='work-input work-picker'>
+			<view class='wBox'>
+				<view class='work-input-bt'>战马供应商</view>
+				<view class='wBox-1'>
+					<picker name="SupplierID4" bindchange="SupplierChange4" value="{{SupplierInx4}}" range="{{SupplierArr4}}" range-key="distributorname">
+						<view class="picker">{{SupplierArr4[SupplierInx4].distributorname}}</view>
+					</picker>
+				</view>
+			</view>
+			<view class='down iconfont icon-tubiao-'></view>
+			<view class='work-input-border'></view>
+		</view> -->
+		<view class='work-input'>
+			<view class='wBox'>
+				<view class='work-input-bt'>联系人</view>
+				<view class='wBox-1'>
+					<input type='text' name='ContactName' placeholder='请输入联系人' class='work-input-bd' />
+				</view>
+			</view>
+			<view class='work-input-border'></view>
+		</view>
+		<view class='work-input'>
+			<view class='wBox'>
+				<view class='work-input-bt'>联系电话</view>
+				<view class='wBox-1'>
+					<input type='text' name='ContactPhone' placeholder='请输入联系电话' class='work-input-bd' />
+				</view>
+			</view>
+			<view class='work-input-border'></view>
+		</view>
+		<view class='clearfix padding-big-top-bottom'>
+			<button form-type="submit" class='button button-block bg-main work-btn'>提 交</button>
+		</view>
+	</form>
+</view>

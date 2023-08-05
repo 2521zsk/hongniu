@@ -1,0 +1,103 @@
+<import src="../tpl/popup_tpl.wxml" />
+
+<!--pages/carryout/details.wxml-->
+<view class='main'>
+	<view class='clearfix padding-large-bottom'>
+		<view class='work-details'>
+			<view class='wBox'>
+				<view class='work-details-bt'>门店名称</view>
+				<view class='wBox-1'>
+					<text>{{cData.storename}}</text>
+				</view>
+			</view>
+			<view class='work-details-border'></view>
+		</view>
+		<view class='work-details'>
+			<view class='wBox'>
+				<view class='work-details-bt'>地址</view>
+				<view class='wBox-1'>
+					<text>{{cData.address}}</text>
+				</view>
+			</view>
+			<view class='work-details-border'></view>
+		</view>
+		<view class='work-details'>
+			<view class='wBox'>
+				<view class='work-details-bt'>执行日期</view>
+				<view class='wBox-1'>
+					<text>{{cData.executedate}}</text>
+				</view>
+			</view>
+			<view class='work-details-border'></view>
+		</view>
+		<view class='work-details'>
+			<view class='wBox'>
+				<view class='work-details-bt'>整体活动说明</view>
+				<view class='wBox-1'>
+					<text>{{cData.wholeactivityremark}}</text>
+				</view>
+			</view>
+			<view class='work-details-border'></view>
+		</view>
+		<view class='work-details'>
+			<view class='wBox'>
+				<view class='work-details-bt'>整体活动照片</view>
+				<view class='wBox-1'>
+					<view wx:if="{{PhotoArr1.length > 0}}">
+						<block wx:for="{{PhotoArr1}}">
+							<image wx:if="{{item != '' && item != null && item != 0}}" src='{{item}}' data-src="{{item}}" data-arr="{{PhotoArr1}}" bindtap="previewImage" class='work-details-pic'></image>
+						</block>
+					</view>
+					<view wx:else>-</view>
+				</view>
+			</view>
+			<view class='work-details-border'></view>
+		</view>
+		<view class='work-details'>
+			<view class='wBox'>
+				<view class='work-details-bt'>物料布置说明</view>
+				<view class='wBox-1'>
+					<text>{{cData.materielarrangeremark}}</text>
+				</view>
+			</view>
+			<view class='work-details-border'></view>
+		</view>
+		<view class='work-details'>
+			<view class='wBox'>
+				<view class='work-details-bt'>物料布置照片</view>
+				<view class='wBox-1'>
+					<view wx:if="{{PhotoArr2.length > 0}}">
+						<block wx:for="{{PhotoArr2}}">
+							<image wx:if="{{item != '' && item != null && item != 0}}" src='{{item}}' data-src="{{item}}" data-arr="{{PhotoArr2}}" bindtap="previewImage" class='work-details-pic'></image>
+						</block>
+					</view>
+					<view wx:else>-</view>
+				</view>
+			</view>
+			<view class='work-details-border'></view>
+		</view>
+		<view class='work-details'>
+			<view class='wBox'>
+				<view class='work-details-bt'>派放/促销场景说明</view>
+				<view class='wBox-1'>
+					<text>{{cData.promotionremark}}</text>
+				</view>
+			</view>
+			<view class='work-details-border'></view>
+		</view>
+		<view class='work-details'>
+			<view class='wBox'>
+				<view class='work-details-bt'>派放/促销场景照片</view>
+				<view class='wBox-1'>
+					<view wx:if="{{PhotoArr3.length > 0}}">
+						<block wx:for="{{PhotoArr3}}">
+							<image wx:if="{{item != '' && item != null && item != 0}}" src='{{item}}' data-src="{{item}}" data-arr="{{PhotoArr3}}" bindtap="previewImage" class='work-details-pic'></image>
+						</block>
+					</view>
+					<view wx:else>-</view>
+				</view>
+			</view>
+			<view class='work-details-border'></view>
+		</view>
+	</view>
+</view>

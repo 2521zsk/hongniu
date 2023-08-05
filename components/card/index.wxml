@@ -1,0 +1,200 @@
+<view class="card-class zan-card" wx:if="{{showtype==0}}">
+  <view class="zan-card__detail">
+    <block>
+      <view class="zan-card__detail-row">
+        <view class=" zan-card__left-col img">
+          <image class="zan-card__img" src="{{ thumb }}" mode="aspectFit"></image>
+        </view>
+        <view class="tit">
+          <label class='t'>{{title}}</label>
+        </view>
+      </view>
+
+      <view class="zan-card__detail-row zan-c-gray-darker">
+        <view class="zan-card__left-col saletype">
+          <label >销售类型：{{ saletype}}</label>
+        </view>
+        <view class="zan-card__right-col act">
+         <label class='actlbl3'>活动：{{activity?activity:'无'}}</label>
+        </view>
+      </view>
+
+      <view class=" zan-card__detail-row zan-c-gray-darker">
+        <view class="zan-card__left-col msg">
+          {{saletitle}}：{{ salenum }} {{salebatch}} {{ singlenum }} {{singlebatch}}
+        </view>
+        <view class="zan-card__right-col ipt">
+          <input class="{{input1class}}" type="number"  data-index="{{index}}" value="{{salenum}}" bindinput='getInput1' />
+          <text>{{salebatch}}</text>
+          <input class="{{input2class}}" type="number" data-index="{{index}}" value="{{singlenum}}" bindinput='getInput2' />
+          <text>{{singlebatch}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<!-- 退货记录 -->
+<view class="card-class zan-card" wx:if="{{showtype==1}}">
+  <view class="zan-card__detail">
+    <block>
+      <view class="zan-card__detail-row">
+        <view class=" zan-card__left-col img">
+          <image class="zan-card__img" src="{{ thumb }}" mode="aspectFit"></image>
+        </view>
+        <view class="tit">
+          <label class='t'>{{title}}</label>
+        </view>
+      </view>
+
+      <view class="zan-card__detail-row zan-c-gray-darker">
+        <view class="zan-card__left-col saletype">
+          销售类型：{{ saletype}}
+        </view>
+        <view class="zan-card__right-col act">
+           本次退货：{{salebody}}
+        </view>
+      </view>
+
+
+    </block>
+  </view>
+</view>
+<!-- 收货确认 -->
+<view class="card-class zan-card" wx:if="{{showtype==2}}">
+  <view class="zan-card__detail">
+    <block>
+      <view class="zan-card__detail-row2">
+        <view class=" zan-card__left-col img">
+          <image class="zan-card__img" src="{{ thumb }}" mode="aspectFit"></image>
+        </view>
+        <view class="tit">
+          <label class='t'>{{title}}</label>
+        </view>
+      </view>
+
+      <view class="zan-card__detail-row2 zan-c-gray-darker">
+        <view class="zan-card__left-col act2">
+        <label class="actlbl">{{activity?activity:'无活动'}}</label>
+        </view>
+        <view class="zan-card__right-col saletype2">
+          {{ saletype}}
+        </view>
+      </view>
+
+      <view class=" zan-card__detail-row2 zan-c-gray-darker">
+        <view class="zan-card__left-col msg2">
+          {{saletitle}}：{{salebody}}
+        </view>
+        <view class="zan-card__right-col ipt2">
+          <input wx:if="{{salebatch}}" style="height:10px;width:48px;" class="{{input1class}}" type="number" data-pindex="{{pindex}}" data-index="{{index}}" value="{{salenum}}" bindinput='getInput1' bindblur="bindblur1"/>
+          <text wx:if="{{salebatch}}">{{salebatch}}</text>
+          <input wx:if="{{singlebatch}}" style="height:10px;width:48px;" class="{{input2class}}" type="number" data-pindex="{{pindex}}" data-index="{{index}}" value="{{singlenum}}" bindinput='getInput2' bindblur="bindblur2" wx:if='{{!!singlebatch}}'/>
+          <text wx:if='{{!!singlebatch}}'>{{singlebatch}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<!-- 收货记录 -->
+<view class="card-class zan-card" wx:if="{{showtype==3}}">
+  <view class="zan-card__detail">
+    <block>
+      <view class="zan-card__detail-row">
+        <view class=" zan-card__left-col img">
+          <image class="zan-card__img" src="{{ thumb }}" mode="aspectFit"></image>
+        </view>
+        <view class="tit">
+          <label class='t'>{{title}}</label>
+        </view>
+      </view>
+
+      <view class="zan-card__detail-row zan-c-gray-darker">
+        <view class="zan-card__left-col saletype">
+          销售类型：{{ saletype}}
+        </view>
+        <view class="zan-card__right-col act">
+          活动：{{activity?activity:'无'}}
+        </view>
+      </view>
+
+      <view class=" zan-card__detail-row zan-c-gray-darker">
+        <view class="zan-card__right-col msg">
+          {{saletitle}}：{{salebody}}
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<!-- 退货确认 -->
+<view class="card-class zan-card" wx:if="{{showtype==4}}">
+  <view class="zan-card__detail">
+    <block>
+      <view class="zan-card__detail-row">
+        <view class=" zan-card__left-col img">
+          <image class="zan-card__img" src="{{ thumb }}" mode="aspectFit"></image>
+        </view>
+        <view class="tit">
+          <label class='t'>{{title}}</label>
+        </view>
+      </view>
+
+      <view class="zan-card__detail-row zan-c-gray-darker">
+        <view class="zan-card__left-col saletype4">
+          已收数量:{{ hascollectbatch || 0}}{{salebatch}}{{hascollectsingle || 0}}{{singlebatch}}
+        </view>
+        <view class="zan-card__right-col act4">
+          已退数量:{{hasreturnbatch || 0}}{{salebatch}}{{hasreturnsingle || 0}}{{singlebatch}}
+        </view>
+      </view>
+
+      <view class=" zan-card__detail-row zan-c-gray-darker">
+        <view class="zan-card__left-col msg4">
+          {{saletype}}
+        </view>
+        <view class="zan-card__right-col ipt4">
+        <label> 本次退货：</label>
+          <input style="height:10px;width:48px;" class="{{input1class}}" type="number"  data-index="{{index}}" value="{{salenum}}" bindinput='getInput1' />
+          <text>{{salebatch}}</text>
+          <input style="height:10px;width:48px;" class="{{input2class}}" type="number" data-index="{{index}}" value="{{singlenum}}" bindinput='getInput2' />
+          <text>{{singlebatch}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<!-- 发货确认 -->
+<view class="card-class zan-card" wx:if="{{showtype==5}}">
+  <view class="zan-card__detail">
+    <block>
+      <view class="zan-card__detail-row2">
+        <view class=" zan-card__left-col img">
+          <image class="zan-card__img" src="{{ thumb }}" mode="aspectFit"></image>
+        </view>
+        <view class="tit">
+          <label class='t'>{{title}}</label>
+        </view>
+      </view>
+
+      <view class="zan-card__detail-row2 zan-c-gray-darker">
+        <view class="zan-card__left-col act2">
+          <label class="actlbl">{{activity?activity:'无活动'}}</label>
+        </view>
+        <view class="zan-card__right-col saletype2">
+          {{ saletype}}
+        </view>
+      </view>
+
+      <view class=" zan-card__detail-row2 zan-c-gray-darker">
+        <view class="zan-card__left-col msg2">
+          {{saletitle}}：{{salebody}}
+        </view>
+        <view class="zan-card__right-col ipt2">
+          <input wx:if="{{salebatch}}" style="height:10px;width:48px;" class="{{input1class}}" type="number" data-pindex="{{pindex}}" data-index="{{index}}" value="{{salenum}}" bindinput='getInput1' bindblur="bindblur1"/>
+          <text wx:if="{{salebatch}}">{{salebatch}}</text>
+          <input wx:if="{{singlebatch}}" style="height:10px;width:48px;" class="{{input2class}}" type="number" data-pindex="{{pindex}}" data-index="{{index}}" value="{{singlenum}}" bindinput='getInput2' bindblur="bindblur2" wx:if='{{!!singlebatch}}'/>
+          <text wx:if='{{!!singlebatch}}'>{{singlebatch}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
